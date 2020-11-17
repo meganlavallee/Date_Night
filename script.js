@@ -70,7 +70,7 @@ function listIngredient(dinner) {
 
       var ingredientName = "strIngredient" + `${ingredientNum}`;
       if (`${keyNum}` === `${ingredientName}`) {
-        $("#food-ingedients").append($("<li>").text(value));
+        $("#food-ingredient").append($("<li>").text(value));
         ingredientNum++;
       }
     }
