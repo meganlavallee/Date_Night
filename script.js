@@ -1,9 +1,36 @@
 // on click run "getDinner" function and "getDrank" function
-$("#submit-btn").on("click", function () {
+$("#randomFood-btn").on("click", function () {
   getDinner();
-  getDronk();
+});
+$("#select-dinner").on("click", function () {
+  var userFood = $("user-input").val()
+  selectDinner(userFood);
 });
 
+function selectDinner(userFood) {
+  var queryFood = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + userFood;
+  $.ajax({
+    url: queryFood,
+    type: "GET",
+  }).then(function (food) {
+    //   set dinner equal to the "food.meals[0]" array
+    var dinner = food.meals[0];
+    console.log(dinner);
+
+    //   set our variables that we get when we make our ajax call
+    var mealTitle = dinner.strMeal;
+    var mealImage = dinner.strMealThumb;
+    var mealPrep = dinner.strInstructions;
+    var mealLink = dinner.strYoutube;
+
+    // this is where all of our function calls will be at the end of the ajax call
+    makeDinner(mealTitle, mealImage, mealPrep, mealLink);
+    // this is where our function will create the ingridents list for our recipe
+    listIngredient(dinner);
+    // this is where our function will create the ingridents list for our recipe
+    listMeasurements(dinner);
+  });
+}
 // ajax call to "getDinner()" and set variables needed to run "makeDinner()"
 function getDinner() {
   var queryFood = "https://www.themealdb.com/api/json/v1/1/random.php";
@@ -21,20 +48,16 @@ function getDinner() {
     var mealPrep = dinner.strInstructions;
     var mealLink = dinner.strYoutube;
 
-    // this is where we'll test and check for measurements
-    
-    
-    
     // this is where all of our function calls will be at the end of the ajax call
     makeDinner(mealTitle, mealImage, mealPrep, mealLink);
     // this is where our function will create the ingridents list for our recipe
     listIngredient(dinner);
     // this is where our function will create the ingridents list for our recipe
-    listMeasurements(dinner)
+    listMeasurements(dinner);
   });
 }
 function listIngredient(dinner) {
-  $("#food-ingredients").empty()
+  $("#food-ingredients").empty();
   var ingredientNum = 1;
   // this for loop is used for looking through dinner and checking for ingridents
   for (const key in dinner) {
@@ -52,7 +75,7 @@ function listIngredient(dinner) {
 }
 
 function listMeasurements(dinner) {
-  $("#food-measurements").empty()
+  $("#food-measurements").empty();
   // this is where our function will create the measurements
   var ingredientNum = 1;
   // this for loop is used for looking through dinner and checking for ingridents
@@ -81,7 +104,6 @@ function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
     .text("Click here to watch a demo video");
 }
 
-getDronk();
 function getDronk() {
   // const apikey = "1";
   const queryDrink = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
