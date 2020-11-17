@@ -1,0 +1,15 @@
+.card {
+    display: inline;
+}
+
+.meal-card {
+    background-color: aquamarine;
+    display: inline;
+    text-align: right;
+}
+
+.drink-card {
+    background-color: turquoise;
+    display: inline;
+    text-align: left;
+}
