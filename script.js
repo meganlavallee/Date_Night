@@ -107,8 +107,18 @@ function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
     .text("Click here to watch a demo video");
 }
 
+// event listeners for random drink generator 
+$("#random-Dronk-btn").on("click", function () {
+
+    getDronk();
+  });
+  $("#select-dronk").on("click", function () {
+    var userDronk = $("#dronk-input").val()
+    selectDronk(userDronk);
+  });
+
 function getDronk() {
-  // const apikey = "1";
+  
   const queryDrink = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
   $.ajax({
@@ -132,6 +142,11 @@ function getDronk() {
     // this is where our function will create the ingridents list for our recipe
     listMeasurements(dronks);
   });
+}
+
+// generate drink by liquor selected
+function selectDronk(dronk){
+    const queryDrink = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${dronk-input}`
 }
 
 function makeDronk(dronkTitle, dronkAlcoholic, dronkCategory, dronkImage, dronkGlass, dronkPrep) {
