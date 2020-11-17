@@ -75,6 +75,7 @@ function listIngredient(dinner) {
       }
     }
   }
+}
 
 function listMeasurements(dinner) {
   $("#food-measurements").empty();
