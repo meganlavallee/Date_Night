@@ -1,13 +1,13 @@
 // on click run "getDinner" function and "getDrank" function
 $("#randomFood-btn").on("click", function () {
-  makeDinner();
+  getDinner();
 });
 $("#select-dinner").on("click", function () {
   var userFood = $("#user-input").val();
   selectDinner(userFood);
 });
 
-function makeDinner() {
+function getDinner() {
   var queryFood = "https://www.themealdb.com/api/json/v1/1/random.php";
   $.ajax({
     url: queryFood,
