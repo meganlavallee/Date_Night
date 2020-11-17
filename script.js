@@ -76,22 +76,6 @@ function listIngredient(dinner) {
     }
   }
 
-  var ingredientNum = 1;
-  // this for loop is used for looking through dinner and checking for ingridents
-  for (const key in dinner) {
-    if (dinner[key]) {
-      var keyNum = key;
-      var value = dinner[key];
-
-      var ingredientName = "strIngredient" + `${ingredientNum}`;
-      if (`${keyNum}` === `${ingredientName}`) {
-        $("#food-ingredient").append($("<li>").text(value));
-        ingredientNum++;
-      }
-    }
-  }
-}
-
 function listMeasurements(dinner) {
   $("#food-measurements").empty();
   // this is where our function will create the measurements
