@@ -7,6 +7,7 @@
     <!-- scripts for jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- link for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Date Night</title>
   </head>
@@ -16,12 +17,15 @@
     </header>
     <div>
       <input id="user-input" type="text" />
-      <button id="submit-btn">Submit</button>
+      <button id="select-dinner">Select</button>
+      <button id="random-btn">Random</button>
     </div>
     <div class="card">
       <div id="meal-card">
         <h2 id="meal-title" class="card-title"></h2>
         <img id="meal-image" src="#" alt="no current image" />
+        <ul id="food-ingedients" class="food-lists"></ul>
+        <ul id="food-measurements"class="food-lists"></ul>
         <p id="meal-prep">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ad
           inventore blanditiis repellendus hic amet debitis voluptatem facilis
