@@ -5,3 +5,44 @@
     font-size: 35px;
     font-family: "Rock Salt";
 }
+
+#user-input{
+    width: 60%;
+    margin-top: 25px;
+    margin-left: 14%;
+    
+}
+
+#randomFood-btn{
+    color: blueviolet
+}
+
+.card{
+    background-color: lightgrey;
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    margin-top: 25px;
+    display: none;
+}
+#meal-title{
+    text-align: center;
+    font-size: 25px;
+    background-color:lightsalmon;
+}
+#meal-prep{
+    font-size: 20px;
+    padding: 25px;
+}
+#dronk-prep{
+    font-size: 20px;
+}
+#meal-image{
+    float: right;
+    height: 250px;
+    width: 250px;
+    padding: 25px;
+}
+#dronk-image{
+    float: left;
+}

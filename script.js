@@ -88,7 +88,6 @@ function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
     .attr("href", mealLink)
     .text("Click here to watch a demo video");
 }
-
 function getDronk() {
   // const apikey = "1";
   const queryDrink = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
