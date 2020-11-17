@@ -5,3 +5,25 @@
     font-size: 35px;
     font-family: "Rock Salt";
 }
+
+#user-input{
+    width: 60%;
+    margin-top: 25px;
+    margin-left: 14%;
+    
+}
+#select-dinner{
+    color: blueviolet;
+}
+#random-btn{
+    color: rebeccapurple;
+}
+
+.card{
+    background-color: lightgrey;
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    
+   
+}
