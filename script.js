@@ -21,21 +21,30 @@ function getDinner() {
     var mealPrep = dinner.strInstructions;
     var mealLink = dinner.strYoutube;
 
-    // this for loop is used for looking through dinner and checking for ingridents
-    for (const i in dinner) {
-      checkIngridents = dinner[i];
-
-      if (dinner[i]) {
-        var item = dinner[i];
-        console.log(item);
-      }
-    }
     // this is where all of our function calls will be at the end of the ajax call
     makeDinner(mealTitle, mealImage, mealPrep, mealLink);
+    listIngredient(dinner);
   });
 }
-function listIngridents() {
+function listIngredient(dinner) {
   // this is where our function will create the ingridents list for our recipe
+  var ingredientNum = 1;
+  // this for loop is used for looking through dinner and checking for ingridents
+  for (const key in dinner) {
+    if (dinner[key]) {
+      var keyNum = key;
+      var value = dinner[key];
+
+      console.log(value);
+      console.log(keyNum);
+
+      var ingredientName = "strIngredient" + `${ingredientNum}`;
+      if (`${keyNum}` === `${ingredientName}`) {
+        $("#food-ingedients").append($("<li>").text(dinner[key]));
+        ingredientNum++;
+      }
+    }
+  }
 }
 
 function listMeasurements() {
