@@ -96,7 +96,7 @@ function listIngredient(dinner) {
                 ingredientNum++;
             }
         }
-
+        
     }
 }
 
