@@ -1,9 +1,12 @@
 // on click run "getDinner" function and "getDrank" function
-$("#submit-btn").on("click", getDinner, getDronk);
+$("#submit-btn").on("click", function () {
+  getDinner();
+  getDronk();
+});
 
+// ajax call to "getDinner()" and set variables needed to run "makeDinner()"
 function getDinner() {
   var queryFood = "https://www.themealdb.com/api/json/v1/1/random.php";
-
   $.ajax({
     url: queryFood,
     type: "GET",
@@ -23,10 +26,10 @@ function getDinner() {
 }
 
 function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
-    $("#meal-title").text(mealTitle);
-    $("#meal-image").attr("src", mealImage);
-    $("")
-    
+  $("#meal-title").text(mealTitle);
+  $("#meal-image").attr("src", mealImage);
+  $("#meal-prep").text(mealPrep);
+  $("#meal-card").append($("<a>").attr("href", mealLink));
 }
 
 getDronk();
