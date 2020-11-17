@@ -106,6 +106,7 @@ function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
     .attr("href", mealLink)
     .text("Click here to watch a demo video");
 }
+
 function getDronk() {
   // const apikey = "1";
   const queryDrink = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
@@ -127,9 +128,9 @@ function getDronk() {
 
     makeDronk(dronkTitle, dronkAlcoholic, dronkCategory, dronkImage, dronkGlass, dronkPrep);
     // this is where our function will create the ingridents list for our recipe
-    listIngredient(dronk);
+    listIngredient(dronks);
     // this is where our function will create the ingridents list for our recipe
-    listMeasurements(dronk);
+    listMeasurements(dronks);
   });
 }
 
@@ -137,18 +138,18 @@ function makeDronk(dronkTitle, dronkAlcoholic, dronkCategory, dronkImage, dronkG
   $("#dronk-title").text(dronkTitle);
   $("#dronk-alcoholic").text(dronkAlcoholic);
   $("#dronk-category").text(dronkCategory);
-  $("#dronk-image").attr("src", dronkImage);
+  $("#dronk-image").attr("src", dronkImage + "/preview");
   $("#dronk-glass").text(dronkGlass)
   $("#dronk-prep").text(dronkPrep);
 }
-function listIngredient(dronk) {
+function listIngredient(dronks) {
     $("#dronk-ingredients").empty();
     var ingredientNum = 1;
     // this for loop is used for looking through dinner and checking for ingridents
-    for (const key in dronk) {
-      if (dronk[key]) {
+    for (const key in dronks) {
+      if (dronks[key]) {
         var keyNum = key;
-        var value = dronk[key];
+        var value = dronks[key];
   
         var ingredientName = "strIngredient" + `${ingredientNum}`;
         if (`${keyNum}` === `${ingredientName}`) {
@@ -159,17 +160,17 @@ function listIngredient(dronk) {
     }
   }
   
-  function listMeasurements(dronk) {
+  function listMeasurements(dronks) {
     $("#dronk-measurements").empty();
     // this is where our function will create the measurements
     var ingredientNum = 1;
     // this for loop is used for looking through dinner and checking for ingridents
-    for (const key in dronk) {
-      if (dronk[key]) {
+    for (const key in dronks) {
+      if (dronks[key]) {
         var keyNum = key;
-        var value = dronk[key];
+        var value = dronks[key];
   
-        if (dronk[key].trim() == " ") return;
+        if (dronks[key].trim() == " ") return;
   
         var measurementName = "strMeasure" + `${ingredientNum}`;
         if (`${keyNum}` === `${measurementName}`) {
