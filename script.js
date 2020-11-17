@@ -21,13 +21,20 @@ function getDinner() {
     var mealPrep = dinner.strInstructions;
     var mealLink = dinner.strYoutube;
 
+    // this is where we'll test and check for measurements
+    
+    
+    
     // this is where all of our function calls will be at the end of the ajax call
     makeDinner(mealTitle, mealImage, mealPrep, mealLink);
+    // this is where our function will create the ingridents list for our recipe
     listIngredient(dinner);
+    // this is where our function will create the ingridents list for our recipe
+    listMeasurements(dinner)
   });
 }
 function listIngredient(dinner) {
-  // this is where our function will create the ingridents list for our recipe
+  $("#food-ingredients").empty()
   var ingredientNum = 1;
   // this for loop is used for looking through dinner and checking for ingridents
   for (const key in dinner) {
@@ -35,20 +42,34 @@ function listIngredient(dinner) {
       var keyNum = key;
       var value = dinner[key];
 
-      console.log(value);
-      console.log(keyNum);
-
       var ingredientName = "strIngredient" + `${ingredientNum}`;
       if (`${keyNum}` === `${ingredientName}`) {
-        $("#food-ingedients").append($("<li>").text(dinner[key]));
+        $("#food-ingedients").append($("<li>").text(value));
         ingredientNum++;
       }
     }
   }
 }
 
-function listMeasurements() {
+function listMeasurements(dinner) {
+  $("#food-measurements").empty()
   // this is where our function will create the measurements
+  var ingredientNum = 1;
+  // this for loop is used for looking through dinner and checking for ingridents
+  for (const key in dinner) {
+    if (dinner[key]) {
+      var keyNum = key;
+      var value = dinner[key];
+
+      if (dinner[key].trim() == "") return;
+
+      var measurementName = "strMeasure" + `${ingredientNum}`;
+      if (`${keyNum}` === `${measurementName}`) {
+        $("#food-measurements").append($("<li>").text(value));
+        ingredientNum++;
+      }
+    }
+  }
 }
 
 function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
