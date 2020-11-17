@@ -1,15 +1,14 @@
 // on click run "getDinner" function and "getDrank" function
 $("#randomFood-btn").on("click", function () {
-
-  getDinner();
+  makeDinner();
 });
 $("#select-dinner").on("click", function () {
-  var userFood = $("#user-input").val()
+  var userFood = $("#user-input").val();
   selectDinner(userFood);
 });
 
-function makeDinner(userFood) {
-  var queryFood = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + userFood;
+function makeDinner() {
+  var queryFood = "https://www.themealdb.com/api/json/v1/1/random.php";
   $.ajax({
     url: queryFood,
     type: "GET",
@@ -26,7 +25,6 @@ function makeDinner(userFood) {
     var foodPrep = dinner.strInstructions;
     var foodLink = dinner.strYoutube;
 
-
     // this is where all of our function calls will be at the end of the ajax call
     makeDinner(foodTitle, foodImage, foodPrep, foodLink);
     // this is where our function will create the ingridents list for our recipe
@@ -37,11 +35,12 @@ function makeDinner(userFood) {
 }
 function listIngredient(dinner) {
   $("#food-ingredients").empty();
-  $('#food-title').text(foodTitle);
-  $("#food-image").attr("src", foodImage)
-  $('#food-prep').text(foodPrep)
-  $('#food-link').attr("href", foodLink)
-  .text("Click here to watch a demo video");
+  $("#food-title").text(foodTitle);
+  $("#food-image").attr("src", foodImage);
+  $("#food-prep").text(foodPrep);
+  $("#food-link")
+    .attr("href", foodLink)
+    .text("Click here to watch a demo video");
 
   var ingredientNum = 1;
   // this for loop is used for looking through dinner and checking for ingridents
@@ -107,7 +106,14 @@ function getDronk() {
     var dronkGlass = dronks.strGlass;
     var dronkPrep = dronks.strInstructions;
 
-    makeDronk(dronkTitle, dronkAlcoholic, dronkCategory, dronkImage, dronkGlass, dronkPrep);
+    makeDronk(
+      dronkTitle,
+      dronkAlcoholic,
+      dronkCategory,
+      dronkImage,
+      dronkGlass,
+      dronkPrep
+    );
     // this is where our function will create the ingridents list for our recipe
     listIngredient(dronks);
     // this is where our function will create the ingridents list for our recipe
@@ -115,12 +121,19 @@ function getDronk() {
   });
 }
 
-function makeDronk(dronkTitle, dronkAlcoholic, dronkCategory, dronkImage, dronkGlass, dronkPrep) {
+function makeDronk(
+  dronkTitle,
+  dronkAlcoholic,
+  dronkCategory,
+  dronkImage,
+  dronkGlass,
+  dronkPrep
+) {
   $("#dronk-title").text(dronkTitle);
   $("#dronk-alcoholic").text(dronkAlcoholic);
   $("#dronk-category").text(dronkCategory);
   $("#dronk-image").attr("src", dronkImage + "/preview");
-  $("#dronk-glass").text(dronkGlass)
+  $("#dronk-glass").text(dronkGlass);
   $("#dronk-prep").text(dronkPrep);
 }
 function listIngredient(dronks) {
