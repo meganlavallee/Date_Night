@@ -7,13 +7,22 @@
     <!-- scripts for jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- link for styling -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <title>Date Night</title>
   </head>
   <body>
     <header>
-      <h1>Date Night</h1>
+      <h1 class="header">Date Night</h1>
     </header>
     <div>
       <input id="user-input" type="text" />
@@ -25,7 +34,7 @@
         <h2 id="meal-title" class="card-title"></h2>
         <img id="meal-image" src="#" alt="no current image" />
         <ul id="food-ingedients" class="food-lists"></ul>
-        <ul id="food-measurements"class="food-lists"></ul>
+        <ul id="food-measurements" class="food-lists"></ul>
         <p id="meal-prep">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ad
           inventore blanditiis repellendus hic amet debitis voluptatem facilis
@@ -36,21 +45,27 @@
       </div>
     </div>
     <div class="card">
-      <div id="drink-card">
-        <h2 id="drink-title" class="card-title"></h2>
-        <img src="#" alt="no current image" />
-        <ul id="drink-ingedients" class="drink-lists"></ul>
-        <ul id="drink-measurements" class="drink-lists"></ul>
+      <div id="dronk-card">
+        <h2 id="dronk-title" class="card-title"></h2>
+        <p id="dronk-alcoholic"></p>
+        <p id="dronk-category"></p>
+        <img id="dronk-image" src="#" alt="no current image" />
+        <p id="dronk-glass"></p>
+        <ul id="dronk-ingedients" class="food-lists"></ul>
+        <ul id="dronk-measurements" class="food-lists"></ul>
         <p id="drink-prep">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ad
           inventore blanditiis repellendus hic amet debitis voluptatem facilis
           adipisci maiores repudiandae, in voluptates quod, minima, eum corporis
           vel! Veniam, suscipit?
         </p>
-        <a href="#" id="drink-link"></a>
       </div>
     </div>
-    <footer></footer>
+    <footer>
+      <div class="content has-text-centered">
+        <p><strong>Date Night</strong> by Brandt, Megan, Rick & Zach</p>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 // on click run "getDinner" function and "getDrank" function
 $("#randomFood-btn").on("click", function () {
+
   getDinner();
 });
 $("#select-dinner").on("click", function () {
@@ -114,7 +115,26 @@ function getDronk() {
     method: "GET",
     url: queryDrink,
   }).then(function (dronk) {
+    var dronks = dronk.drinks[0];
     console.log(dronk);
-    console.log(dronk.drinks[0].strIngredient1);
+
+    //   set our variables that we get when we make our ajax call
+    var dronkTitle = dronks.strDrink;
+    var dronkAlcoholic = dronks.strAlcoholic;
+    var dronkCategory = dronks.strCategory;
+    var dronkImage = dronks.strDrinkThumb;
+    var dronkGlass = dronks.strGlass;
+    var dronkPrep = dronks.strInstructions;
+
+    makeDronk(dronkTitle, dronkAlcoholic, dronkCategory, dronkImage, dronkGlass, dronkPrep);
   });
+}
+
+function makeDronk(dronkTitle, dronkAlcoholic, dronkCategory, dronkImage, dronkGlass, dronkPrep) {
+  $("#dronk-title").text(dronkTitle);
+  $("#dronk-alcoholic").text(dronkAlcoholic);
+  $("#dronk-category").text(dronkCategory);
+  $("#dronk-image").attr("src", dronkImage);
+  $("#dronk-glass").text(dronkGlass)
+  $("#dronk-prep").text(dronkPrep);
 }
