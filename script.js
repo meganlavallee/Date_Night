@@ -29,7 +29,9 @@ function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
   $("#meal-title").text(mealTitle);
   $("#meal-image").attr("src", mealImage);
   $("#meal-prep").text(mealPrep);
-  $("#meal-card").append($("<a>").attr("href", mealLink));
+  $("#meal-link")
+    .attr("href", mealLink)
+    .text("Click here to watch a demo video");
 }
 
 getDronk();
