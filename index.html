@@ -24,13 +24,23 @@
     <header>
       <h1 class="header">Date Night</h1>
     </header>
-    <div class="card">
+    <div id="all-buttons">
       <input id="user-input" type="text" />
       <button id="select-dinner">Select</button>
       <button id="randomFood-btn">Random</button>
+      <!-- all drink butons -->
+      <input id="dronk-input" type="text" />
+      <button id="dronk-btn">Drink</button>
+      <button id="random-Dronk-btn">Random Drink</button>
+    </div>
+    <div class="card">
       <div id="meal-card">
         <h2 id="meal-title" class="card-title"></h2>
-        <img id="meal-image" src="#" alt="no current image" />
+        <img
+          id="meal-image"
+          src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+          alt="no current image"
+        />
         <ul id="food-ingredients" class="food-lists"></ul>
         <ul id="food-measurements" class="food-lists"></ul>
         <p id="meal-prep">
@@ -43,15 +53,15 @@
       </div>
     </div>
     <div class="card">
-      <input id="dronk-input" type="text" />
-      <button id="dronk-btn">Drink</button>
-      <button id="random-Dronk-btn"> Random Drink</button>
-
       <div id="dronk-card">
         <h2 id="dronk-title" class="card-title"></h2>
         <p id="dronk-alcoholic"></p>
         <p id="dronk-category"></p>
-        <img id="dronk-image" src="#" alt="no current image" />
+        <img
+          id="dronk-image"
+          src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1125&q=80"
+          alt="no current image"
+        />
         <p id="dronk-glass"></p>
         <ul id="dronk-ingredients" class="food-lists"></ul>
         <ul id="dronk-measurements" class="food-lists"></ul>
