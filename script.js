@@ -8,7 +8,7 @@ $("#select-dinner").on("click", function () {
   selectDinner(userFood);
 });
 
-function selectDinner(userFood) {
+function makeDinner(userFood) {
   var queryFood = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + userFood;
   $.ajax({
     url: queryFood,
@@ -21,38 +21,14 @@ function selectDinner(userFood) {
     console.log(dinner);
 
     //   set our variables that we get when we make our ajax call
-    var mealTitle = dinner.strMeal;
-    var mealImage = dinner.strMealThumb;
-    var mealPrep = dinner.strInstructions;
-    var mealLink = dinner.strYoutube;
+    var foodTitle = dinner.strMeal;
+    var foodImage = dinner.strMealThumb;
+    var foodPrep = dinner.strInstructions;
+    var foodLink = dinner.strYoutube;
+
 
     // this is where all of our function calls will be at the end of the ajax call
-    makeDinner(mealTitle, mealImage, mealPrep, mealLink);
-    // this is where our function will create the ingridents list for our recipe
-    listIngredient(dinner);
-    // this is where our function will create the ingridents list for our recipe
-    listMeasurements(dinner);
-  });
-}
-// ajax call to "getDinner()" and set variables needed to run "makeDinner()"
-function getDinner() {
-  var queryFood = "https://www.themealdb.com/api/json/v1/1/random.php";
-  $.ajax({
-    url: queryFood,
-    type: "GET",
-  }).then(function (food) {
-    //   set dinner equal to the "food.meals[0]" array
-    var dinner = food.meals[0];
-    console.log(dinner);
-
-    //   set our variables that we get when we make our ajax call
-    var mealTitle = dinner.strMeal;
-    var mealImage = dinner.strMealThumb;
-    var mealPrep = dinner.strInstructions;
-    var mealLink = dinner.strYoutube;
-
-    // this is where all of our function calls will be at the end of the ajax call
-    makeDinner(mealTitle, mealImage, mealPrep, mealLink);
+    makeDinner(foodTitle, foodImage, foodPrep, foodLink);
     // this is where our function will create the ingridents list for our recipe
     listIngredient(dinner);
     // this is where our function will create the ingridents list for our recipe
@@ -61,6 +37,12 @@ function getDinner() {
 }
 function listIngredient(dinner) {
   $("#food-ingredients").empty();
+  $('#food-title').text(foodTitle);
+  $("#food-image").attr("src", foodImage)
+  $('#food-prep').text(foodPrep)
+  $('#food-link').attr("href", foodLink)
+  .text("Click here to watch a demo video");
+
   var ingredientNum = 1;
   // this for loop is used for looking through dinner and checking for ingridents
   for (const key in dinner) {
@@ -143,40 +125,40 @@ function makeDronk(dronkTitle, dronkAlcoholic, dronkCategory, dronkImage, dronkG
   $("#dronk-prep").text(dronkPrep);
 }
 function listIngredient(dronks) {
-    $("#dronk-ingredients").empty();
-    var ingredientNum = 1;
-    // this for loop is used for looking through dinner and checking for ingridents
-    for (const key in dronks) {
-      if (dronks[key]) {
-        var keyNum = key;
-        var value = dronks[key];
-  
-        var ingredientName = "strIngredient" + `${ingredientNum}`;
-        if (`${keyNum}` === `${ingredientName}`) {
-          $("#dronk-ingredients").append($("<li>").text(value));
-          ingredientNum++;
-        }
+  $("#dronk-ingredients").empty();
+  var ingredientNum = 1;
+  // this for loop is used for looking through dinner and checking for ingridents
+  for (const key in dronks) {
+    if (dronks[key]) {
+      var keyNum = key;
+      var value = dronks[key];
+
+      var ingredientName = "strIngredient" + `${ingredientNum}`;
+      if (`${keyNum}` === `${ingredientName}`) {
+        $("#dronk-ingredients").append($("<li>").text(value));
+        ingredientNum++;
       }
     }
   }
-  
-  function listMeasurements(dronks) {
-    $("#dronk-measurements").empty();
-    // this is where our function will create the measurements
-    var ingredientNum = 1;
-    // this for loop is used for looking through dinner and checking for ingridents
-    for (const key in dronks) {
-      if (dronks[key]) {
-        var keyNum = key;
-        var value = dronks[key];
-  
-        if (dronks[key].trim() == " ") return;
-  
-        var measurementName = "strMeasure" + `${ingredientNum}`;
-        if (`${keyNum}` === `${measurementName}`) {
-          $("#dronk-measurements").append($("<li>").text(value));
-          ingredientNum++;
-        }
+}
+
+function listMeasurements(dronks) {
+  $("#dronk-measurements").empty();
+  // this is where our function will create the measurements
+  var ingredientNum = 1;
+  // this for loop is used for looking through dinner and checking for ingridents
+  for (const key in dronks) {
+    if (dronks[key]) {
+      var keyNum = key;
+      var value = dronks[key];
+
+      if (dronks[key].trim() == " ") return;
+
+      var measurementName = "strMeasure" + `${ingredientNum}`;
+      if (`${keyNum}` === `${measurementName}`) {
+        $("#dronk-measurements").append($("<li>").text(value));
+        ingredientNum++;
       }
     }
   }
+}
