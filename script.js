@@ -3,7 +3,7 @@ $("#randomFood-btn").on("click", function () {
   getDinner();
 });
 $("#select-dinner").on("click", function () {
-  var userFood = $("user-input").val()
+  var userFood = $("#user-input").val()
   selectDinner(userFood);
 });
 
@@ -13,6 +13,8 @@ function selectDinner(userFood) {
     url: queryFood,
     type: "GET",
   }).then(function (food) {
+    console.log(queryFood);
+    console.log(food);
     //   set dinner equal to the "food.meals[0]" array
     var dinner = food.meals[0];
     console.log(dinner);
