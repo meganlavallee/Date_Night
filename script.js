@@ -4,9 +4,9 @@ $("#submit-btn").on("click", function () {
   getDronk();
 });
 
+// ajax call to "getDinner()" and set variables needed to run "makeDinner()"
 function getDinner() {
   var queryFood = "https://www.themealdb.com/api/json/v1/1/random.php";
-
   $.ajax({
     url: queryFood,
     type: "GET",
