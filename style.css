@@ -1,4 +1,4 @@
-.header{
+header{
     text-align: center;
     background-color:lightpink;
     height: 50px;
@@ -31,9 +31,9 @@
     display: none;
 }
 
-/*#dronk-display{
+#dronk-display{
     display: none;
-}*/
+}
 
 /* MEAL */
 #meal-title{
@@ -60,6 +60,7 @@
 
 #meal-lists{
     display: inline-block;
+    padding: 20cm;
 }
 
 #food-ingredients{
@@ -74,8 +75,8 @@
 /* DRONK */
 #dronk-image{
     float: left;
-    height: 150px;
-    width: 150px;
+    height: 250px;
+    width: 250px;
     padding: 25px;
 }
 
@@ -86,7 +87,8 @@ background-color:lightsalmon;
 }
 
 #dronk-lists{
-    display: inline-block;   
+    display: inline-block;
+    padding: 20ch;   
 }
 
 #dronk-ingredients{
@@ -108,25 +110,10 @@ background-color:lightsalmon;
 }
 
 /*Buttons*/
-#select-dinner{
+button{
     border: 1px solid;
     padding: 10px;
-    box-shadow: 5px 10px inset;
-}
-#randomFood-btn{
-    border: 1px solid;
-    padding: 10px;
-    box-shadow: 5px 10px inset;
-    color: blueviolet
-}
-#dronk-btn{
-    border: 1px solid;
-    padding: 10px;
-    box-shadow: 5px 10px inset;
-}
-
-#random-Dronk-btn{
-    border: 1px solid;
-    padding: 10px;
-    box-shadow: 5px 10px inset;
+    box-shadow: 5px 10px inset;  
+    color: rgb(98, 53, 109);
+    box-align: center;
 }
