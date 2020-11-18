@@ -27,7 +27,7 @@
     width: 90%;
     margin: auto;
     margin-top: 25px;
-    /* display: none; */
+    
 }
 
 
@@ -52,7 +52,9 @@
     padding: 25px;
 }
 
-
+#meal-lists{
+    display: inline-block;
+}
 
 /* DRONK */
 #dronk-image{
@@ -66,4 +68,16 @@
 text-align: center;
 font-size: 25px;
 background-color:lightsalmon;
+}
+
+#dronk-lists{
+    display: inline-block;
+}
+
+#dronk-ingredients{
+    display: list-item;
+}
+
+#dronk-measurements{
+    display: inline;
 }
