@@ -1,15 +1,19 @@
 .header{
     text-align: center;
-    background-color: aqua;
+    background-color:lightpink;
     height: 50px;
     font-size: 35px;
     font-family: "Rock Salt";
 }
 
 #user-input{
-    width: 60%;
+    width: 25%;
     margin-top: 25px;
-    margin-left: 14%;
+    
+}
+#dronk-input{
+    width: 25%;
+    margin-top: 25px;
     
 }
 
@@ -23,8 +27,12 @@
     width: 90%;
     margin: auto;
     margin-top: 25px;
-    display: none;
+    /* display: none; */
 }
+
+
+
+/* MEAL */
 #meal-title{
     text-align: center;
     font-size: 25px;
@@ -43,6 +51,19 @@
     width: 250px;
     padding: 25px;
 }
+
+
+
+/* DRONK */
 #dronk-image{
     float: left;
+    height: 250px;
+    width: 250px;
+    padding: 25px;
+}
+
+#dronk-title{
+text-align: center;
+font-size: 25px;
+background-color:lightsalmon;
 }
