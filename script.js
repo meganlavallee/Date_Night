@@ -63,11 +63,8 @@ function getDinner() {
     url: queryFood,
     type: "GET",
   }).then(function (food) {
-    console.log(queryFood);
-    console.log(food);
     //   set dinner equal to the "food.meals[0]" array
     var dinner = food.meals[0];
-    console.log(dinner);
 
     //   set our variables that we get when we make our ajax call
     var foodTitle = dinner.strMeal;
@@ -126,92 +123,92 @@ function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
   $("#meal-image").attr("src", mealImage);
   $("#meal-prep").text(mealPrep);
   $("#meal-link")
-  .attr("href", mealLink)
-  .text("Click here to watch a demo video");
-  
+    .attr("href", mealLink)
+    .text("Click here to watch a demo video");
+
   $("#meal-display").css("display", "block");
 }
 
 // event listeners for random drink generator
 $("#random-Dronk-btn").on("click", function () {
-    getDronk();
+  getDronk();
 });
 
 function getDronk() {
-    const queryDrink = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-    
-    $.ajax({
-        method: "GET",
-        url: queryDrink,
-    }).then(function (dronk) {
-        var dronks = dronk.drinks[0];
-        
-        //   set our variables that we get when we make our ajax call
-        var dronkTitle = dronks.strDrink;
-        var dronkAlcoholic = dronks.strAlcoholic;
-        var dronkCategory = dronks.strCategory;
-        var dronkImage = dronks.strDrinkThumb;
-        var dronkGlass = dronks.strGlass;
-        var dronkPrep = dronks.strInstructions;
-        
-        makeDronk(
-            dronkTitle,
-            dronkAlcoholic,
-            dronkCategory,
-            dronkImage,
-            dronkGlass,
-            dronkPrep
-            );
-            
-            // this is where our function will create the ingridents list for our recipe
-            listDronkIngredients(dronks);
-            // this is where our function will create the ingridents list for our recipe
-            listDronkMeasurements(dronks);
-            $("#dronk-display").css("display", "block");
-        });
-    }
-    
-    $("#dronk-btn").on("click", function () {
-        var userDronkInput = $("#dronk-input").val().trim();
-        var userDronk = userDronkInput.toLowerCase();
-        if (userDronkInput == ""){ 
-            return;
-        }else{
-            selectDronk(userDronk);
-        }
+  const queryDrink = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+
+  $.ajax({
+    method: "GET",
+    url: queryDrink,
+  }).then(function (dronk) {
+    var dronks = dronk.drinks[0];
+
+    //   set our variables that we get when we make our ajax call
+    var dronkTitle = dronks.strDrink;
+    var dronkAlcoholic = dronks.strAlcoholic;
+    var dronkCategory = dronks.strCategory;
+    var dronkImage = dronks.strDrinkThumb;
+    var dronkGlass = dronks.strGlass;
+    var dronkPrep = dronks.strInstructions;
+
+    makeDronk(
+      dronkTitle,
+      dronkAlcoholic,
+      dronkCategory,
+      dronkImage,
+      dronkGlass,
+      dronkPrep
+    );
+
+    // this is where our function will create the ingridents list for our recipe
+    listDronkIngredients(dronks);
+    // this is where our function will create the ingridents list for our recipe
+    listDronkMeasurements(dronks);
+    $("#dronk-display").css("display", "block");
+  });
+}
+
+$("#dronk-btn").on("click", function () {
+  var userDronkInput = $("#dronk-input").val().trim();
+  var userDronk = userDronkInput.toLowerCase();
+  if (userDronkInput == "") {
+    return;
+  } else {
+    selectDronk(userDronk);
+  }
 });
 // generate drink by liquor selected
 function selectDronk(userDronk) {
   const queryDrink =
     "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + userDronk;
 
-    $.ajax({
-        method: "GET",
-        url: queryDrink,
-    }).then(function (dronk) {
-        var dronkLen = dronk.drinks.length;
-        var randomNum = "";
-        randomNum = Math.floor(Math.random() * dronkLen);
-        var dronks = dronk.drinks[randomNum];
-        var dronkID = dronks.idDrink;
-        findDronk(dronkID);
-    });
+  $.ajax({
+    method: "GET",
+    url: queryDrink,
+  }).then(function (dronk) {
+    var dronkLen = dronk.drinks.length;
+    var randomNum = "";
+    randomNum = Math.floor(Math.random() * dronkLen);
+    var dronks = dronk.drinks[randomNum];
+    var dronkID = dronks.idDrink;
+    findDronk(dronkID);
+  });
 }
 function findDronk(dronkID) {
   const queryDrink = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${dronkID}`;
 
-    $.ajax({
-        method: "GET",
-        url: queryDrink,
-    }).then(function (dronk) {
-        var dronks = dronk.drinks[0];
-        //   set our variables that we get when we make our ajax call
-        var dronkTitle = dronks.strDrink;
-        var dronkAlcoholic = dronks.strAlcoholic;
-        var dronkCategory = dronks.strCategory;
-        var dronkImage = dronks.strDrinkThumb;
-        var dronkGlass = dronks.strGlass;
-        var dronkPrep = dronks.strInstructions;
+  $.ajax({
+    method: "GET",
+    url: queryDrink,
+  }).then(function (dronk) {
+    var dronks = dronk.drinks[0];
+    //   set our variables that we get when we make our ajax call
+    var dronkTitle = dronks.strDrink;
+    var dronkAlcoholic = dronks.strAlcoholic;
+    var dronkCategory = dronks.strCategory;
+    var dronkImage = dronks.strDrinkThumb;
+    var dronkGlass = dronks.strGlass;
+    var dronkPrep = dronks.strInstructions;
 
     makeDronk(
       dronkTitle,
@@ -226,60 +223,59 @@ function findDronk(dronkID) {
     // this is where our function will create the ingridents list for our recipe
     listDronkMeasurements(dronks);
     $("#dronk-display").css("display", "block");
-});
+  });
 }
 
 function makeDronk(
-    dronkTitle,
-    dronkAlcoholic,
-    dronkCategory,
-    dronkImage,
-    dronkGlass,
-    dronkPrep
-    ) {
-        $("#dronk-title").text(dronkTitle);
-        $("#dronk-alcoholic").text(dronkAlcoholic);
-        $("#dronk-category").text(dronkCategory);
-        $("#dronk-image").attr("src", dronkImage + "/preview");
-        $("#dronk-glass").text(dronkGlass);
-        $("#dronk-prep").text(dronkPrep);
+  dronkTitle,
+  dronkAlcoholic,
+  dronkCategory,
+  dronkImage,
+  dronkGlass,
+  dronkPrep
+) {
+  $("#dronk-title").text(dronkTitle);
+  $("#dronk-alcoholic").text(dronkAlcoholic);
+  $("#dronk-category").text(dronkCategory);
+  $("#dronk-image").attr("src", dronkImage + "/preview");
+  $("#dronk-glass").text(dronkGlass);
+  $("#dronk-prep").text(dronkPrep);
+}
+function listDronkIngredients(dronks) {
+  $("#dronk-ingredients").empty();
+  var ingredientNum = 1;
+  // this for loop is used for looking through dinner and checking for ingridents
+  for (const key in dronks) {
+    if (dronks[key]) {
+      var keyNum = key;
+      var value = dronks[key];
+
+      var ingredientName = "strIngredient" + `${ingredientNum}`;
+      if (`${keyNum}` === `${ingredientName}`) {
+        $("#dronk-ingredients").append($("<li>").text(value));
+        ingredientNum++;
+      }
     }
-    function listDronkIngredients(dronks) {
-        $("#dronk-ingredients").empty();
-        var ingredientNum = 1;
-        // this for loop is used for looking through dinner and checking for ingridents
-        for (const key in dronks) {
-            if (dronks[key]) {
-                var keyNum = key;
-                var value = dronks[key];
-                
-                var ingredientName = "strIngredient" + `${ingredientNum}`;
-                if (`${keyNum}` === `${ingredientName}`) {
-                    $("#dronk-ingredients").append($("<li>").text(value));
-                    ingredientNum++;
-                }
-            }
-        }
+  }
+}
+
+function listDronkMeasurements(dronks) {
+  $("#dronk-measurements").empty();
+  // this is where our function will create the measurements
+  var ingredientNum = 1;
+  // this for loop is used for looking through dinner and checking for ingridents
+  for (const key in dronks) {
+    if (dronks[key]) {
+      var keyNum = key;
+      var value = dronks[key];
+
+      if (dronks[key].trim() == " ") return;
+
+      var measurementName = "strMeasure" + `${ingredientNum}`;
+      if (`${keyNum}` === `${measurementName}`) {
+        $("#dronk-measurements").append($("<li>").text(value));
+        ingredientNum++;
+      }
     }
-    
-    function listDronkMeasurements(dronks) {
-        $("#dronk-measurements").empty();
-        // this is where our function will create the measurements
-        var ingredientNum = 1;
-        // this for loop is used for looking through dinner and checking for ingridents
-        for (const key in dronks) {
-            if (dronks[key]) {
-                var keyNum = key;
-                var value = dronks[key];
-                
-                if (dronks[key].trim() == " ") return;
-                
-                var measurementName = "strMeasure" + `${ingredientNum}`;
-                if (`${keyNum}` === `${measurementName}`) {
-                    $("#dronk-measurements").append($("<li>").text(value));
-                    ingredientNum++;
-                }
-            }
-        }
-    }
-    
+  }
+}
