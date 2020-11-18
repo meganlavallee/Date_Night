@@ -189,12 +189,16 @@ function selectDronk(userDronk) {
     }).then(function (dronk) {
         console.log(dronk);
         if (userDronk === "rum"){
-            randomNum = Math.floor(Math.random() * 23);
+            var randomNum = "";
+            randomNum = Math.floor(Math.random() * 22);
         } else if (userDronk === "vodka") {
+            var randomNum = "";
             randomNum = Math.floor(Math.random() * 85);
         } else if (userDronk === "tequila") {
+            var randomNum = "";
             randomNum = Math.floor(Math.random() * 25);
         } else if (userDronk === "gin") {
+            var randomNum = "";
             randomNum = Math.floor(Math.random() * 100);
         }
         var dronks = dronk.drinks[randomNum];
