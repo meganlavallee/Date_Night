@@ -78,6 +78,8 @@ header{
     height: 250px;
     width: 250px;
     padding: 25px;
+    margin: auto;
+    object-fit: contain;
 }
 
 #dronk-title{
@@ -88,7 +90,7 @@ background-color:lightsalmon;
 
 #dronk-lists{
     display: inline-block;
-    padding: 20ch;   
+    padding: 0%;  
 }
 
 #dronk-ingredients{
