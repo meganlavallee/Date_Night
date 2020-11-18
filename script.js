@@ -146,7 +146,6 @@ function getDronk() {
         url: queryDrink,
     }).then(function (dronk) {
         var dronks = dronk.drinks[0];
-        console.log(dronk);
 
         //   set our variables that we get when we make our ajax call
         var dronkTitle = dronks.strDrink;
@@ -166,7 +165,7 @@ function getDronk() {
         );
 
         // this is where our function will create the ingridents list for our recipe
-        listDronkIngredient(dronks);
+        listDronkIngredients(dronks);
         // this is where our function will create the ingridents list for our recipe
         listDronkMeasurements(dronks);
     });
@@ -187,7 +186,6 @@ function selectDronk(userDronk) {
         method: "GET",
         url: queryDrink,
     }).then(function (dronk) {
-        console.log(dronk);
         if (userDronk === "rum"){
             var randomNum = "";
             randomNum = Math.floor(Math.random() * 22);
@@ -213,8 +211,6 @@ function findDronk(dronkID) {
         method: "GET",
         url: queryDrink,
     }).then(function (dronk) {
-        console.log(queryDrink);
-        console.log(dronk);
         var dronks = dronk.drinks[0];
         //   set our variables that we get when we make our ajax call
         var dronkTitle = dronks.strDrink;
