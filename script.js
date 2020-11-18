@@ -79,7 +79,6 @@ function listIngredient(dinner) {
     }
   }
 }
-
 function listMeasurements(dinner) {
   $("#food-measurements").empty();
   // this is where our function will create the measurements
@@ -141,6 +140,7 @@ function getDronk() {
       dronkGlass,
       dronkPrep
     );
+
     // this is where our function will create the ingridents list for our recipe
     listDronkIngredient(dronks);
     // this is where our function will create the ingridents list for our recipe
@@ -148,21 +148,34 @@ function getDronk() {
   });
 }
 
-$("#select-dronk").on("click", function () {
+$("#dronk-btn").on("click", function () {
   var userDronk = $("#dronk-input").val();
   selectDronk(userDronk);
 });
 // generate drink by liquor selected
 function selectDronk(userDronk) {
-  const queryDrink = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${userDronk}`;
+  const queryDrink =
+    "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + userDronk;
 
   $.ajax({
     method: "GET",
     url: queryDrink,
   }).then(function (dronk) {
     var dronks = dronk.drinks[0];
-    console.log(dronk);
+    var dronkID = dronks.idDrink;
+    findDronk(dronkID);
+  });
+}
+function findDronk(dronkID) {
+  const queryDrink = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${dronkID}`;
 
+  $.ajax({
+    method: "GET",
+    url: queryDrink,
+  }).then(function (dronk) {
+    console.log(queryDrink);
+    console.log(dronk);
+    var dronks = dronk.drinks[0];
     //   set our variables that we get when we make our ajax call
     var dronkTitle = dronks.strDrink;
     var dronkAlcoholic = dronks.strAlcoholic;
