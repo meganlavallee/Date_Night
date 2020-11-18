@@ -140,12 +140,11 @@ $("#random-Dronk-btn").on("click", function () {
 function getDronk() {
   const queryDrink = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
-  $.ajax({
-    method: "GET",
-    url: queryDrink,
-  }).then(function (dronk) {
-    var dronks = dronk.drinks[0];
-    console.log(dronk);
+    $.ajax({
+        method: "GET",
+        url: queryDrink,
+    }).then(function (dronk) {
+        var dronks = dronk.drinks[0];
 
     //   set our variables that we get when we make our ajax call
     var dronkTitle = dronks.strDrink;
@@ -164,11 +163,11 @@ function getDronk() {
       dronkPrep
     );
 
-    // this is where our function will create the ingridents list for our recipe
-    listDronkIngredient(dronks);
-    // this is where our function will create the ingridents list for our recipe
-    listDronkMeasurements(dronks);
-  });
+        // this is where our function will create the ingridents list for our recipe
+        listDronkIngredients(dronks);
+        // this is where our function will create the ingridents list for our recipe
+        listDronkMeasurements(dronks);
+    });
 }
 
 $("#dronk-btn").on("click", function () {
@@ -182,46 +181,43 @@ function selectDronk(userDronk) {
   const queryDrink =
     "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + userDronk;
 
-  $.ajax({
-    method: "GET",
-    url: queryDrink,
-  }).then(function (dronk) {
-    console.log(dronk);
-    if (userDronk === "rum") {
-      var randomNum = "";
-      randomNum = Math.floor(Math.random() * 22);
-    } else if (userDronk === "vodka") {
-      var randomNum = "";
-      randomNum = Math.floor(Math.random() * 85);
-    } else if (userDronk === "tequila") {
-      var randomNum = "";
-      randomNum = Math.floor(Math.random() * 25);
-    } else if (userDronk === "gin") {
-      var randomNum = "";
-      randomNum = Math.floor(Math.random() * 100);
-    }
-    var dronks = dronk.drinks[randomNum];
-    var dronkID = dronks.idDrink;
-    findDronk(dronkID);
-  });
+    $.ajax({
+        method: "GET",
+        url: queryDrink,
+    }).then(function (dronk) {
+        if (userDronk === "rum"){
+            var randomNum = "";
+            randomNum = Math.floor(Math.random() * 22);
+        } else if (userDronk === "vodka") {
+            var randomNum = "";
+            randomNum = Math.floor(Math.random() * 85);
+        } else if (userDronk === "tequila") {
+            var randomNum = "";
+            randomNum = Math.floor(Math.random() * 25);
+        } else if (userDronk === "gin") {
+            var randomNum = "";
+            randomNum = Math.floor(Math.random() * 100);
+        }
+        var dronks = dronk.drinks[randomNum];
+        var dronkID = dronks.idDrink;
+        findDronk(dronkID);
+    });
 }
 function findDronk(dronkID) {
   const queryDrink = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${dronkID}`;
 
-  $.ajax({
-    method: "GET",
-    url: queryDrink,
-  }).then(function (dronk) {
-    console.log(queryDrink);
-    console.log(dronk);
-    var dronks = dronk.drinks[0];
-    //   set our variables that we get when we make our ajax call
-    var dronkTitle = dronks.strDrink;
-    var dronkAlcoholic = dronks.strAlcoholic;
-    var dronkCategory = dronks.strCategory;
-    var dronkImage = dronks.strDrinkThumb;
-    var dronkGlass = dronks.strGlass;
-    var dronkPrep = dronks.strInstructions;
+    $.ajax({
+        method: "GET",
+        url: queryDrink,
+    }).then(function (dronk) {
+        var dronks = dronk.drinks[0];
+        //   set our variables that we get when we make our ajax call
+        var dronkTitle = dronks.strDrink;
+        var dronkAlcoholic = dronks.strAlcoholic;
+        var dronkCategory = dronks.strCategory;
+        var dronkImage = dronks.strDrinkThumb;
+        var dronkGlass = dronks.strGlass;
+        var dronkPrep = dronks.strInstructions;
 
     makeDronk(
       dronkTitle,
