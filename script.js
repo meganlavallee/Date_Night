@@ -8,6 +8,7 @@ $("#select-dinner").on("click", function () {
   selectDinner(userFood);
 });
 
+// this is the function that will run if the user inputs a food item
 function selectDinner(userFood) {
   var queryFood =
     "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + userFood;
@@ -19,7 +20,6 @@ function selectDinner(userFood) {
     randomNum = Math.floor(Math.random() * 11);
     var dinner = food.meals[randomNum];
     var dinnerId = dinner.idMeal;
-    console.log(dinner);
 
     // set our variables that we get when we make our ajax call
     var foodTitle = dinner.strMeal;
@@ -47,8 +47,12 @@ function selectIngredients(dinnerId) {
     listIngredient(dinner);
     // this is where our function will create the ingridents list for our recipe
     listMeasurements(dinner);
+    $("#user-input").val("");
+    $("meal-display").css("display", "block");
   });
 }
+// I know this looks like unneeded code but I left it as a function so if I wanted to set
+// new element properties I could change them here in the future.
 function selectDescription(foodPrep) {
   $("#meal-prep").text(foodPrep);
 }
@@ -125,6 +129,8 @@ function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
   $("#meal-link")
     .attr("href", mealLink)
     .text("Click here to watch a demo video");
+
+  $("meal-display").css("display", "block");
 }
 
 // event listeners for random drink generator
