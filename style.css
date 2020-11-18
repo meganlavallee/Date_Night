@@ -23,13 +23,18 @@
 
 .card{
     background-color: lightgrey;
-    height: 100%;
+    height: auto;
     width: 90%;
     margin: auto;
     margin-top: 25px;
+    margin-bottom: 25px;
+}
+#meal-display{
     display: none;
 }
-
+#dronk-display{
+    display: none;
+}
 
 
 /* MEAL */
@@ -79,14 +84,18 @@ background-color:lightsalmon;
 
 #dronk-lists{
     display: inline-block;
+    
 }
 
 #dronk-ingredients{
     display: list-item;
+    
+    
 }
 
 #dronk-measurements{
     display: inline;
+
 }
 
 
