@@ -1,3 +1,6 @@
+.is-horizontal-center{
+    justify-content: center;
+}
 header{
     text-align: center;
     background-color:lightpink;
@@ -8,14 +11,16 @@ header{
 
 #user-input{
     width: 25%;
-    margin-left: 25px;
-    align-content: center;
+    margin-left: 100px;
+    
+    
 }
 
 #dronk-input{
     width: 25%;
     margin-top: 25px; 
-    align-content: center;
+    
+    
 }
 
 .card{
@@ -33,7 +38,7 @@ header{
 
 #dronk-display{
     display: none;
-} */
+} 
 
 /* MEAL */
 #meal-title{
@@ -74,12 +79,14 @@ header{
 
 
 /* DRONK */
-#dronk-image{
+/* #dronk-image{
     float: left;
     height: auto;
     width: auto;
     padding: 25px;
-}
+    
+    
+} */
 
 #dronk-title{
 text-align: center;
@@ -87,18 +94,21 @@ font-size: 25px;
 background-color:lightsalmon;
 }
 
-#dronk-lists{
+/* #dronk-lists{
     display: inline-block;
-    padding: 20ch;   
-}
+    padding: 20ch;  
+    
+} */
 
-#dronk-ingredients{
+/* #dronk-ingredients{
     display: inline-block  
+    
 }
 
 #dronk-measurements{
     display: inline-block;
-}
+    
+} */
 
 
 /* FOOTER */
