@@ -116,4 +116,5 @@ button{
     box-shadow: 5px 10px inset;  
     color: rgb(98, 53, 109);
     box-align: center;
+    border-radius: 2px;
 }
