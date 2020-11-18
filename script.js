@@ -189,19 +189,9 @@ function selectDronk(userDronk) {
         method: "GET",
         url: queryDrink,
     }).then(function (dronk) {
-        if (userDronk === "rum"){
-            var randomNum = "";
-            randomNum = Math.floor(Math.random() * 22);
-        } else if (userDronk === "vodka") {
-            var randomNum = "";
-            randomNum = Math.floor(Math.random() * 85);
-        } else if (userDronk === "tequila") {
-            var randomNum = "";
-            randomNum = Math.floor(Math.random() * 25);
-        } else if (userDronk === "gin") {
-            var randomNum = "";
-            randomNum = Math.floor(Math.random() * 100);
-        }
+        var dronkLen = dronk.drinks.length;
+        var randomNum = "";
+        randomNum = Math.floor(Math.random() * dronkLen);
         var dronks = dronk.drinks[randomNum];
         var dronkID = dronks.idDrink;
         findDronk(dronkID);
