@@ -27,7 +27,7 @@
     width: 90%;
     margin: auto;
     margin-top: 25px;
-    
+    display: none;
 }
 
 
@@ -55,6 +55,13 @@
 #meal-lists{
     display: inline-block;
 }
+#food-ingredients{
+    display: inline-block;
+}
+#food-measurements{
+    display: inline-block;
+}
+
 
 /* DRONK */
 #dronk-image{
@@ -80,4 +87,13 @@ background-color:lightsalmon;
 
 #dronk-measurements{
     display: inline;
+}
+
+
+/* FOOTER */
+.content{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
 }
