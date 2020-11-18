@@ -95,5 +95,29 @@ background-color:lightsalmon;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;
+    height: auto;
+    border-bottom: 20px;
+}
+
+/*Buttons*/
+#select-dinner{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px inset;
+}
+#randomFood-btn{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px inset;
+}
+#dronk-btn{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px inset;
+}
+
+#random-Dronk-btn{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px inset;
 }
