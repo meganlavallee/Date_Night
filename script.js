@@ -48,7 +48,7 @@ function selectIngredients(dinnerId) {
     // this is where our function will create the ingridents list for our recipe
     listMeasurements(dinner);
     $("#user-input").val("");
-    $("meal-display").css("display", "block");
+    $("#meal-display").css("display", "block");
   });
 }
 // I know this looks like unneeded code but I left it as a function so if I wanted to set
@@ -129,7 +129,7 @@ function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
     .attr("href", mealLink)
     .text("Click here to watch a demo video");
 
-  $("meal-display").css("display", "block");
+  $("#meal-display").css("display", "block");
 }
 
 // event listeners for random drink generator
