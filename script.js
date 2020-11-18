@@ -15,26 +15,44 @@ function selectDinner(userFood) {
     url: queryFood,
     type: "GET",
   }).then(function (food) {
-    console.log(food);
     // set dinner equal to the "food.meals[random number between 0 and 10]" array
     randomNum = Math.floor(Math.random() * 11);
     var dinner = food.meals[randomNum];
+    var dinnerId = dinner.idMeal;
     console.log(dinner);
 
     // set our variables that we get when we make our ajax call
     var foodTitle = dinner.strMeal;
     var foodImage = dinner.strMealThumb;
-    var foodPrep = dinner.strInstructions;
     var foodLink = dinner.strYoutube;
-
     // this is where all of our function calls will be at the end of the ajax call
-    makeDinner(foodTitle, foodImage, foodPrep, foodLink);
+    makeDinner(foodTitle, foodImage, foodLink);
+    // this is where we'll make our second ajax call based on id to get ingredients
+    selectIngredients(dinnerId);
+  });
+}
+// this function makes a second API call so it can get the list of ingredients since our first api call doesn't
+function selectIngredients(dinnerId) {
+  var queryIngredients =
+    "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + dinnerId;
+  $.ajax({
+    url: queryIngredients,
+    type: "GET",
+  }).then(function (food) {
+    var dinner = food.meals[0];
+    var foodPrep = dinner.strInstructions;
+
+    selectDescription(foodPrep);
     // this is where our function will create the ingridents list for our recipe
     listIngredient(dinner);
     // this is where our function will create the ingridents list for our recipe
     listMeasurements(dinner);
   });
 }
+function selectDescription(foodPrep) {
+  $("#meal-prep").text(foodPrep);
+}
+
 function getDinner() {
   var queryFood = "https://www.themealdb.com/api/json/v1/1/random.php";
   $.ajax({
