@@ -1,120 +1,146 @@
-header{
-    text-align: center;
-    background-color:lightpink;
-    height: 50px;
-    font-size: 35px;
-    font-family: "Rock Salt";
+header {
+  text-align: center;
+  background-color: blue;
+  height: 50px;
+  font-size: 35px;
+  font-family: "Rock Salt";
+  color: white;
 }
 
-#user-input{
-    width: 25%;
-    margin-left: 25px;
-    align-content: center;
+#user-input {
+  width: 25%;
+  margin-left: 25px;
+  align-content: center;
 }
 
-#dronk-input{
-    width: 25%;
-    margin-top: 25px; 
-    align-content: center;
+#dronk-input {
+  width: 25%;
+  margin-top: 25px;
+  align-content: center;
 }
 
-.card{
-    background-color: lightgrey;
-    height: auto;
-    width: 90%;
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
+.card {
+  background-color: lightblue;
+  height: auto;
+  width: 90%;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  /* rick changed these things */
+  padding: 20px;
+  border: 2px solid darkblue;
+  border-radius: 2px;
 }
 
-#meal-display{
-    display: none;
+#meal-display {
+  display: none;
 }
 
-#dronk-display{
-    display: none;
+#dronk-display {
+  display: none;
 }
 
 /* MEAL */
-#meal-title{
-    text-align: center;
-    font-size: 25px;
-    background-color:lightsalmon;
+#meal-title {
+  text-align: center;
+  font-size: 25px;
+  /* rick */
+  background-color: white;
+  border-radius: 2px;
+  color: darkblue;
 }
 
-#meal-prep{
-    font-size: 20px;
-    padding: 25px;
+#meal-prep {
+  font-size: 20px;
+  padding: 25px;
+  /* rick */
+  background: white;
+  color: darkblue;
+  border-radius: 2px;
 }
 
-#dronk-prep{
-    font-size: 20px;
+#dronk-prep {
+  font-size: 20px;
 }
 
-#meal-image{
-    float: right;
-    height: 250px;
-    width: 250px;
-    padding: 25px;
+#meal-image {
+  float: right;
+  padding: 25px;
+  /* rick */
+  border-radius: 2px;
+  height: 250px;
+  width: 250px;
 }
 
-#meal-lists{
-    display: inline-block;
-    padding: 20cm;
+#food-lists {
+  display: inline-block;
+  padding: 20px;
+  background: white;
+  margin: 10px auto;
+  border-radius: 2px;
 }
 
-#food-ingredients{
-    display: inline-block;
+#food-ingredients {
+  display: inline-block;
+  /* rick */
+  background: white;
+  color: darkblue;
+  border-radius: 2px;
+  padding: 10px 10px;
 }
 
-#food-measurements{
-    display: inline-block;
+#food-measurements {
+  display: inline-block;
+  /* rick */
+  background: white;
+  color: darkblue;
+  border-radius: 2px;
+  padding: 10px 10px;
 }
-
 
 /* DRONK */
-#dronk-image{
-    float: left;
-    height: 250px;
-    width: 250px;
-    padding: 25px;
+#dronk-image {
+  float: left;
+  height: 250px;
+  width: 250px;
+  padding: 25px;
 }
 
-#dronk-title{
-text-align: center;
-font-size: 25px;
-background-color:lightsalmon;
+#dronk-title {
+  text-align: center;
+  font-size: 25px;
+  background-color: lightsalmon;
 }
 
-#dronk-lists{
-    display: inline-block;
-    padding: 20ch;   
+#dronk-lists {
+  display: inline-block;
+  padding: 20ch;
 }
 
-#dronk-ingredients{
-    display: inline-block  
+#dronk-ingredients {
+  display: inline-block;
 }
 
-#dronk-measurements{
-    display: inline-block;
+#dronk-measurements {
+  display: inline-block;
 }
-
 
 /* FOOTER */
-.content{
-    /*position: absolute;*/
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    border-bottom: 20px;
+.content {
+  /*position: absolute;*/
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  border-bottom: 20px;
 }
 
 /*Buttons*/
-button{
-    border: 1px solid;
-    padding: 10px;
-    box-shadow: 5px 10px inset;  
-    color: rgb(98, 53, 109);
-    box-align: center;
-    border-radius: 2px;
+button {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px inset;
+  box-align: center;
+  /* rick */
+  border-radius: 2px;
+  color: blue;
 }

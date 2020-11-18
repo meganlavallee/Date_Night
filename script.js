@@ -63,11 +63,8 @@ function getDinner() {
         url: queryFood,
         type: "GET",
     }).then(function (food) {
-        console.log(queryFood);
-        console.log(food);
         //   set dinner equal to the "food.meals[0]" array
         var dinner = food.meals[0];
-        console.log(dinner);
 
         //   set our variables that we get when we make our ajax call
         var foodTitle = dinner.strMeal;
