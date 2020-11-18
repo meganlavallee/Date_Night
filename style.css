@@ -51,6 +51,10 @@
     width: 250px;
     padding: 25px;
 }
+
+#meal-lists{
+    display: inline-block;
+}
 #food-ingredients{
     display: inline-block;
 }
@@ -73,6 +77,17 @@ font-size: 25px;
 background-color:lightsalmon;
 }
 
+#dronk-lists{
+    display: inline-block;
+}
+
+#dronk-ingredients{
+    display: list-item;
+}
+
+#dronk-measurements{
+    display: inline;
+}
 
 
 /* FOOTER */
