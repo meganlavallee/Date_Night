@@ -172,10 +172,15 @@ function getDronk() {
 }
 
 $("#dronk-btn").on("click", function () {
-    var userDronkInput = $("#dronk-input").val();
+    var userDronkInput = $("#dronk-input").val().trim();
     var userDronk = userDronkInput.toLowerCase();
+    console.log(userDronkInput);
+    console.log(userDronk);
+    if (userDronkInput = " "){ 
+        return;
+    }else{
     selectDronk(userDronk);
-    if (userDronk = "") return;
+    }
 });
 // generate drink by liquor selected
 function selectDronk(userDronk) {
