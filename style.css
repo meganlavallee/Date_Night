@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 header {
   text-align: center;
   background-color: blue;
@@ -17,6 +18,31 @@ header {
   width: 25%;
   margin-top: 25px;
   align-content: center;
+=======
+.is-horizontal-center{
+    justify-content: center;
+}
+header{
+    text-align: center;
+    background-color:lightpink;
+    height: 50px;
+    font-size: 35px;
+    font-family: "Rock Salt";
+}
+
+#user-input{
+    width: 25%;
+    margin-left: 100px;
+    
+    
+}
+
+#dronk-input{
+    width: 25%;
+    margin-top: 25px; 
+    
+    
+>>>>>>> f1e7b56e1398f2330b47ce1b493ea744d2d4d131
 }
 
 .card {
@@ -36,9 +62,15 @@ header {
   display: none;
 }
 
+<<<<<<< HEAD
 #dronk-display {
   display: none;
 }
+=======
+#dronk-display{
+    display: none;
+} 
+>>>>>>> f1e7b56e1398f2330b47ce1b493ea744d2d4d131
 
 /* MEAL */
 #meal-title {
@@ -63,6 +95,7 @@ header {
   font-size: 20px;
 }
 
+<<<<<<< HEAD
 #meal-image {
   float: right;
   padding: 25px;
@@ -71,6 +104,14 @@ header {
   height: 250px;
   width: 250px;
 }
+=======
+/* #meal-image{
+    float: right;
+    height: 250px;
+    width: 250px;
+    padding: 25px;
+} */
+>>>>>>> f1e7b56e1398f2330b47ce1b493ea744d2d4d131
 
 #food-lists {
   display: inline-block;
@@ -80,6 +121,7 @@ header {
   border-radius: 2px;
 }
 
+<<<<<<< HEAD
 #food-ingredients {
   display: inline-block;
   /* rick */
@@ -87,6 +129,11 @@ header {
   color: darkblue;
   border-radius: 2px;
   padding: 10px 10px;
+=======
+#food-ingredients{
+    display: inline-block;
+    margin-left: 10px;
+>>>>>>> f1e7b56e1398f2330b47ce1b493ea744d2d4d131
 }
 
 #food-measurements {
@@ -99,12 +146,23 @@ header {
 }
 
 /* DRONK */
+<<<<<<< HEAD
 #dronk-image {
   float: left;
   height: 250px;
   width: 250px;
   padding: 25px;
 }
+=======
+/* #dronk-image{
+    float: left;
+    height: auto;
+    width: auto;
+    padding: 25px;
+    
+    
+} */
+>>>>>>> f1e7b56e1398f2330b47ce1b493ea744d2d4d131
 
 #dronk-title {
   text-align: center;
@@ -112,6 +170,7 @@ header {
   background-color: lightsalmon;
 }
 
+<<<<<<< HEAD
 #dronk-lists {
   display: inline-block;
   padding: 20ch;
@@ -124,6 +183,21 @@ header {
 #dronk-measurements {
   display: inline-block;
 }
+=======
+ /* #dronk-lists{
+    display: inline-block;
+    padding: 0%;  
+} */
+#dronk-ingredients{
+    display: inline-block  
+    
+}
+
+#dronk-measurements{
+    display: inline-block;
+    
+} 
+>>>>>>> f1e7b56e1398f2330b47ce1b493ea744d2d4d131
 
 /* FOOTER */
 .content {
@@ -135,6 +209,7 @@ header {
 }
 
 /*Buttons*/
+<<<<<<< HEAD
 button {
   border: 1px solid;
   padding: 10px;
@@ -143,4 +218,12 @@ button {
   /* rick */
   border-radius: 2px;
   color: blue;
+=======
+button{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px inset;  
+    color: rgb(98, 53, 109);
+    box-align: center;
+>>>>>>> f1e7b56e1398f2330b47ce1b493ea744d2d4d131
 }
