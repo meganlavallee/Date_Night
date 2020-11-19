@@ -194,6 +194,11 @@ function selectDronk(userDronk) {
         method: "GET",
         url: queryDrink,
     }).then(function (dronk) {
+        // check if user input returns an ingredient. if
+        // it does not match, it will call dronkName function
+        if (dronk == "" || dronk == null || dronk == undefined) {
+            dronkName(userDronk);
+        }else {
         // variable which pulls length of drink array so it can randomize
         // return based on user input
         var dronkLen = dronk.drinks.length;
@@ -204,6 +209,7 @@ function selectDronk(userDronk) {
         // generate in html
         var dronkID = dronks.idDrink;
         findDronk(dronkID);
+        }
     });
 }
 
@@ -217,6 +223,40 @@ function findDronk(dronkID) {
         url: queryDrink,
     }).then(function (dronk) {
 
+        //   set our variables that we get when we make our ajax call
+        var dronks = dronk.drinks[0];
+        var dronkTitle = dronks.strDrink;
+        var dronkAlcoholic = dronks.strAlcoholic;
+        var dronkCategory = dronks.strCategory;
+        var dronkImage = dronks.strDrinkThumb;
+        var dronkGlass = dronks.strGlass;
+        var dronkPrep = dronks.strInstructions;
+
+        // this is the function called to create drink info in html
+        makeDronk(
+            dronkTitle,
+            dronkAlcoholic,
+            dronkCategory,
+            dronkImage,
+            dronkGlass,
+            dronkPrep
+        );
+        // this is where our function will create the ingredients list for our recipe
+        listDronkIngredients(dronks);
+        // this is where our function will create the ingredients list for our recipe
+        listDronkMeasurements(dronks);
+        $("#dronk-display").css("display", "block");
+    });
+}
+// function to search for specific drink name and details
+function dronkName(userDronk) {
+    const queryDrink = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userDronk}`;
+
+    $.ajax({
+        method: "GET",
+        url: queryDrink,
+    }).then(function (dronk) {
+        console.log(dronk);
         //   set our variables that we get when we make our ajax call
         var dronks = dronk.drinks[0];
         var dronkTitle = dronks.strDrink;
