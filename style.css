@@ -30,6 +30,7 @@ header{
     margin: auto;
     margin-top: 25px;
     margin-bottom: 25px;
+    word-wrap: break-word;
 }
 
 #meal-display{
@@ -75,6 +76,7 @@ header{
 
 #food-measurements{
     display: inline-block;
+    margin-right: 50px;
 }
 
 
@@ -99,12 +101,14 @@ background-color:lightsalmon;
     padding: 0%;  
 } */
 #dronk-ingredients{
-    display: inline-block  
+    display: inline-block;
+    text-align: left; 
     
 }
 
 #dronk-measurements{
     display: inline-block;
+    text-align: right;
     
 } 
 
