@@ -1,194 +1,195 @@
 // on click run "getDinner" function for a random dinner
 $("#randomFood-btn").on("click", function () {
-    getDinner();
+  getDinner();
 });
 // on click run "selectDinner" function from user input
 $("#select-dinner").on("click", function () {
-    var userFood = $("#user-input").val();
-    selectDinner(userFood);
+  var userFood = $("#user-input").val();
+  if (!userFood) return;
+  selectDinner(userFood);
 });
-
 // this is the function that will run if the user inputs a food item
 function selectDinner(userFood) {
-    var queryFood =
-        "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + userFood;
-    $.ajax({
-        url: queryFood,
-        type: "GET",
-    }).then(function (food) {
-        // set dinner equal to the "food.meals[random number between 0 and 10]" array
-        randomNum = Math.floor(Math.random() * 11);
-        var dinner = food.meals[randomNum];
-        var dinnerId = dinner.idMeal;
+  var queryFood =
+    "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + userFood;
+  $.ajax({
+    url: queryFood,
+    type: "GET",
+  }).then(function (food) {
+    randomNum = Math.floor(Math.random() * 11);
+    // set dinner equal to the "food.meals[random number between 0 and 10]" array
+    var dinner = food.meals[randomNum];
+    var dinnerId = dinner.idMeal;
 
-        // set our variables that we get when we make our ajax call
-        var foodTitle = dinner.strMeal;
-        var foodImage = dinner.strMealThumb;
-        var foodLink = dinner.strYoutube;
-        // this is where all of our function calls will be at the end of the ajax call
-        makeDinner(foodTitle, foodImage, foodLink);
-        // this is where we'll make our second ajax call based on id to get ingredients
-        selectIngredients(dinnerId);
-    });
+    // set our variables that we get when we make our ajax call
+    var foodTitle = dinner.strMeal;
+    var foodImage = dinner.strMealThumb;
+    var foodLink = dinner.strYoutube;
+    // this is where all of our function calls will be at the end of the ajax call
+    makeDinner(foodTitle, foodImage, foodLink);
+    // this is where we'll make our second ajax call based on id to get ingredients
+    selectIngredients(dinnerId);
+  });
 }
 // this function makes a second API call so it can get the list of ingredients since our first api call doesn't
 function selectIngredients(dinnerId) {
-    var queryIngredients =
-        "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + dinnerId;
-    $.ajax({
-        url: queryIngredients,
-        type: "GET",
-    }).then(function (food) {
-        var dinner = food.meals[0];
-        var foodPrep = dinner.strInstructions;
+  var queryIngredients =
+    "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + dinnerId;
+  $.ajax({
+    url: queryIngredients,
+    type: "GET",
+  }).then(function (food) {
+    var dinner = food.meals[0];
+    var foodPrep = dinner.strInstructions;
 
-        selectDescription(foodPrep);
-        // this is where our function will create the ingridents list for our recipe
-        listIngredient(dinner);
-        // this is where our function will create the ingridents list for our recipe
-        listMeasurements(dinner);
-        $("#user-input").val("");
-        $("#meal-display").css("display", "block");
-    });
+    selectDescription(foodPrep);
+    // this is where our function will create the ingridents list for our recipe
+    listIngredient(dinner);
+    // this is where our function will create the ingridents list for our recipe
+    listMeasurements(dinner);
+    $("#user-input").val("");
+    $("#meal-display").css("display", "block");
+  });
 }
 // I know this looks like unneeded code but I left it as a function so if I wanted to set
 // new element properties I could change them here in the future.
 function selectDescription(foodPrep) {
-    $("#meal-prep").text(foodPrep);
+  $("#meal-prep").text(foodPrep);
 }
-
+// this is the ajax call that runs on random button click and sets the variables passed to our other functions
 function getDinner() {
-    var queryFood = "https://www.themealdb.com/api/json/v1/1/random.php";
-    $.ajax({
-        url: queryFood,
-        type: "GET",
-    }).then(function (food) {
-        console.log(queryFood);
-        console.log(food);
-        //   set dinner equal to the "food.meals[0]" array
-        var dinner = food.meals[0];
-        console.log(dinner);
+  var queryFood = "https://www.themealdb.com/api/json/v1/1/random.php";
+  $.ajax({
+    url: queryFood,
+    type: "GET",
+  }).then(function (food) {
+    // set dinner equal to the "food.meals[0]" array
+    var dinner = food.meals[0];
 
-        //   set our variables that we get when we make our ajax call
-        var foodTitle = dinner.strMeal;
-        var foodImage = dinner.strMealThumb;
-        var foodPrep = dinner.strInstructions;
-        var foodLink = dinner.strYoutube;
+    // set our variables that we get when we make our ajax call
+    var foodTitle = dinner.strMeal;
+    var foodImage = dinner.strMealThumb;
+    var foodPrep = dinner.strInstructions;
+    var foodLink = dinner.strYoutube;
 
-        // this is where all of our function calls will be at the end of the ajax call
-        makeDinner(foodTitle, foodImage, foodPrep, foodLink);
-        // this is where our function will create the ingridents list for our recipe
-        listIngredient(dinner);
-        // this is where our function will create the ingridents list for our recipe
-        listMeasurements(dinner);
-    });
+    // this is where all of our function calls will be at the end of the ajax call
+    makeDinner(foodTitle, foodImage, foodPrep, foodLink);
+    // this is where our function will create the ingridents list for our recipe
+    listIngredient(dinner);
+    // this is where our function will create the measurements list for our recipe
+    listMeasurements(dinner);
+  });
 }
+// this function will compile our ingredients and display them to a screen
 function listIngredient(dinner) {
-    $("#food-ingredients").empty();
-    var ingredientNum = 1;
-    // this for loop is used for looking through dinner and checking for ingridents
-    for (const key in dinner) {
-        if (dinner[key]) {
-            var keyNum = key;
-            var value = dinner[key];
+  $("#food-ingredients").empty();
+  var ingredientNum = 1;
+  // this for loop is used for looking through dinner and checking for ingridents
+  for (const key in dinner) {
+    if (dinner[key]) {
+      var keyNum = key;
+      var value = dinner[key];
 
-            var ingredientName = "strIngredient" + `${ingredientNum}`;
-            if (`${keyNum}` === `${ingredientName}`) {
-                $("#food-ingredients").append($("<li>").text(value));
-                ingredientNum++;
-            }
-        }
+      var ingredientName = "strIngredient" + `${ingredientNum}`;
+      if (`${keyNum}` === `${ingredientName}`) {
+        $("#food-ingredients").append($("<li>").text(value));
+        ingredientNum++;
+      }
     }
+  }
 }
+// this function will compile our measurements and display them to a screen
 function listMeasurements(dinner) {
-    $("#food-measurements").empty();
-    // this is where our function will create the measurements
-    var ingredientNum = 1;
-    // this for loop is used for looking through dinner and checking for ingridents
-    for (const key in dinner) {
-        if (dinner[key]) {
-            var keyNum = key;
-            var value = dinner[key];
+  $("#food-measurements").empty();
+  // this is where our function will create the measurements
+  var ingredientNum = 1;
+  // this for loop is used for looking through dinner and checking for ingridents
+  for (const key in dinner) {
+    if (dinner[key]) {
+      var keyNum = key;
+      var value = dinner[key];
 
-            if (dinner[key].trim() == "") return;
+      if (dinner[key].trim() == "") return;
 
-            var measurementName = "strMeasure" + `${ingredientNum}`;
-            if (`${keyNum}` === `${measurementName}`) {
-                $("#food-measurements").append($("<li>").text(value));
-                ingredientNum++;
-            }
-        }
+      var measurementName = "strMeasure" + `${ingredientNum}`;
+      if (`${keyNum}` === `${measurementName}`) {
+        $("#food-measurements").append($("<li>").text(value));
+        ingredientNum++;
+      }
     }
+  }
 }
-
+// this is the actual function that compiles our ajax call data and displays it to the screen
 function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
-    $("#meal-title").text(mealTitle);
-    $("#meal-image").attr("src", mealImage);
-    $("#meal-prep").text(mealPrep);
-    $("#meal-link")
-        .attr("href", mealLink)
-        .text("Click here to watch a demo video");
+  $("#meal-title").text(mealTitle);
+  $("#meal-image").attr("src", mealImage);
+  $("#meal-prep").text(mealPrep);
+  $("#meal-link")
+    .attr("href", mealLink)
+    .text("Click here to watch a demo video");
 
-    $("#meal-display").css("display", "block");
+  $("#meal-display").css("display", "block");
 }
-
+// start of zachs code / drink calls
+// -------------------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------
 // event listeners for random drink generator
 $("#random-Dronk-btn").on("click", function () {
-    getDronk();
+  getDronk();
 });
 // function containing ajax call for random drink
 function getDronk() {
-    const queryDrink = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+  const queryDrink = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
-    $.ajax({
-        method: "GET",
-        url: queryDrink,
-    }).then(function (dronk) {
-        var dronks = dronk.drinks[0];
+  $.ajax({
+    method: "GET",
+    url: queryDrink,
+  }).then(function (dronk) {
+    var dronks = dronk.drinks[0];
 
-        //   set our variables that we get when we make our ajax call
-        var dronkTitle = dronks.strDrink;
-        var dronkAlcoholic = dronks.strAlcoholic;
-        var dronkCategory = dronks.strCategory;
-        var dronkImage = dronks.strDrinkThumb;
-        var dronkGlass = dronks.strGlass;
-        var dronkPrep = dronks.strInstructions;
+    //   set our variables that we get when we make our ajax call
+    var dronkTitle = dronks.strDrink;
+    var dronkAlcoholic = dronks.strAlcoholic;
+    var dronkCategory = dronks.strCategory;
+    var dronkImage = dronks.strDrinkThumb;
+    var dronkGlass = dronks.strGlass;
+    var dronkPrep = dronks.strInstructions;
 
-        // calls function which appends drink info into html
-        makeDronk(
-            dronkTitle,
-            dronkAlcoholic,
-            dronkCategory,
-            dronkImage,
-            dronkGlass,
-            dronkPrep
-        );
+    // calls function which appends drink info into html
+    makeDronk(
+      dronkTitle,
+      dronkAlcoholic,
+      dronkCategory,
+      dronkImage,
+      dronkGlass,
+      dronkPrep
+    );
 
-        // this is where our function will create the ingredients list for our recipe
-        listDronkIngredients(dronks);
-        // this is where our function will create the ingredients list for our recipe
-        listDronkMeasurements(dronks);
-        // shows drink card once item is searched
-        $("#dronk-display").css("display", "block");
-    });
+    // this is where our function will create the ingredients list for our recipe
+    listDronkIngredients(dronks);
+    // this is where our function will create the ingredients list for our recipe
+    listDronkMeasurements(dronks);
+    // shows drink card once item is searched
+    $("#dronk-display").css("display", "block");
+  });
 }
 
 // event listener for button to search drinks with specific ingredient
 $("#dronk-btn").on("click", function () {
-    // variables to allow input to pass through api call which also stops
-    // user from running function if input is empty
-    var userDronkInput = $("#dronk-input").val().trim();
-    var userDronk = userDronkInput.toLowerCase();
-    if (userDronkInput == "") {
-        return;
-    } else {
-        selectDronk(userDronk);
-    }
+  // variables to allow input to pass through api call which also stops
+  // user from running function if input is empty
+  var userDronkInput = $("#dronk-input").val().trim();
+  var userDronk = userDronkInput.toLowerCase();
+  if (userDronkInput == "") {
+    return;
+  } else {
+    selectDronk(userDronk);
+  }
 });
 // generate drink by liquor selected
 function selectDronk(userDronk) {
-    const queryDrink =
-        "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + userDronk;
+  const queryDrink =
+    "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + userDronk;
 
     $.ajax({
         method: "GET",
@@ -216,37 +217,36 @@ function selectDronk(userDronk) {
 // finds drink based on ID passed through and dynamically creates info
 // in html
 function findDronk(dronkID) {
-    const queryDrink = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${dronkID}`;
+  const queryDrink = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${dronkID}`;
 
-    $.ajax({
-        method: "GET",
-        url: queryDrink,
-    }).then(function (dronk) {
+  $.ajax({
+    method: "GET",
+    url: queryDrink,
+  }).then(function (dronk) {
+    //   set our variables that we get when we make our ajax call
+    var dronks = dronk.drinks[0];
+    var dronkTitle = dronks.strDrink;
+    var dronkAlcoholic = dronks.strAlcoholic;
+    var dronkCategory = dronks.strCategory;
+    var dronkImage = dronks.strDrinkThumb;
+    var dronkGlass = dronks.strGlass;
+    var dronkPrep = dronks.strInstructions;
 
-        //   set our variables that we get when we make our ajax call
-        var dronks = dronk.drinks[0];
-        var dronkTitle = dronks.strDrink;
-        var dronkAlcoholic = dronks.strAlcoholic;
-        var dronkCategory = dronks.strCategory;
-        var dronkImage = dronks.strDrinkThumb;
-        var dronkGlass = dronks.strGlass;
-        var dronkPrep = dronks.strInstructions;
-
-        // this is the function called to create drink info in html
-        makeDronk(
-            dronkTitle,
-            dronkAlcoholic,
-            dronkCategory,
-            dronkImage,
-            dronkGlass,
-            dronkPrep
-        );
-        // this is where our function will create the ingredients list for our recipe
-        listDronkIngredients(dronks);
-        // this is where our function will create the ingredients list for our recipe
-        listDronkMeasurements(dronks);
-        $("#dronk-display").css("display", "block");
-    });
+    // this is the function called to create drink info in html
+    makeDronk(
+      dronkTitle,
+      dronkAlcoholic,
+      dronkCategory,
+      dronkImage,
+      dronkGlass,
+      dronkPrep
+    );
+    // this is where our function will create the ingredients list for our recipe
+    listDronkIngredients(dronks);
+    // this is where our function will create the ingredients list for our recipe
+    listDronkMeasurements(dronks);
+    $("#dronk-display").css("display", "block");
+  });
 }
 // function to search for specific drink name and details
 function dronkName(userDronk) {
@@ -284,57 +284,57 @@ function dronkName(userDronk) {
 }
 // takes all info gathered from ajax call to fill html elements
 function makeDronk(
-    dronkTitle,
-    dronkAlcoholic,
-    dronkCategory,
-    dronkImage,
-    dronkGlass,
-    dronkPrep
+  dronkTitle,
+  dronkAlcoholic,
+  dronkCategory,
+  dronkImage,
+  dronkGlass,
+  dronkPrep
 ) {
-    $("#dronk-title").text(dronkTitle);
-    $("#dronk-alcoholic").text(dronkAlcoholic);
-    $("#dronk-category").text(dronkCategory);
-    $("#dronk-image").attr("src", dronkImage + "/preview");
-    $("#dronk-glass").text(dronkGlass);
-    $("#dronk-prep").text(dronkPrep);
+  $("#dronk-title").text(dronkTitle);
+  $("#dronk-alcoholic").text(dronkAlcoholic);
+  $("#dronk-category").text(dronkCategory);
+  $("#dronk-image").attr("src", dronkImage + "/preview");
+  $("#dronk-glass").text(dronkGlass);
+  $("#dronk-prep").text(dronkPrep);
 }
 
 // structured after food ingredients to create list items of ingredients
 function listDronkIngredients(dronks) {
-    $("#dronk-ingredients").empty();
-    var ingredientNum = 1;
-    // this for loop is used for looking through drink info and checking for ingredients
-    for (const key in dronks) {
-        if (dronks[key]) {
-            var keyNum = key;
-            var value = dronks[key];
+  $("#dronk-ingredients").empty();
+  var ingredientNum = 1;
+  // this for loop is used for looking through drink info and checking for ingredients
+  for (const key in dronks) {
+    if (dronks[key]) {
+      var keyNum = key;
+      var value = dronks[key];
 
-            var ingredientName = "strIngredient" + `${ingredientNum}`;
-            if (`${keyNum}` === `${ingredientName}`) {
-                $("#dronk-ingredients").append($("<li>").text(value));
-                ingredientNum++;
-            }
-        }
+      var ingredientName = "strIngredient" + `${ingredientNum}`;
+      if (`${keyNum}` === `${ingredientName}`) {
+        $("#dronk-ingredients").append($("<li>").text(value));
+        ingredientNum++;
+      }
     }
+  }
 }
 
 // structured after food measurements to create list items of measurements
 function listDronkMeasurements(dronks) {
-    $("#dronk-measurements").empty();
-    var ingredientNum = 1;
-    // this for loop is used for looking through drink info and checking for ingredients
-    for (const key in dronks) {
-        if (dronks[key]) {
-            var keyNum = key;
-            var value = dronks[key];
+  $("#dronk-measurements").empty();
+  var ingredientNum = 1;
+  // this for loop is used for looking through drink info and checking for ingredients
+  for (const key in dronks) {
+    if (dronks[key]) {
+      var keyNum = key;
+      var value = dronks[key];
 
-            if (dronks[key].trim() == " ") return;
+      if (dronks[key].trim() == " ") return;
 
-            var measurementName = "strMeasure" + `${ingredientNum}`;
-            if (`${keyNum}` === `${measurementName}`) {
-                $("#dronk-measurements").append($("<li>").text(value));
-                ingredientNum++;
-            }
-        }
+      var measurementName = "strMeasure" + `${ingredientNum}`;
+      if (`${keyNum}` === `${measurementName}`) {
+        $("#dronk-measurements").append($("<li>").text(value));
+        ingredientNum++;
+      }
     }
+  }
 }
