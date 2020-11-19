@@ -3,6 +3,7 @@
 }
 
 
+
 header{
     text-align: center;
     background-color:#9FEDD7;
@@ -114,13 +115,13 @@ background-color:#FCE181;
 
 
 /* FOOTER */
-.content{
-    /*position: absolute;*/
-    bottom: 0;
+ footer{ 
+    position: unset;
+     bottom: 0;
     width: 100%;
     height: auto;
     border-bottom: 20px;
-}
+} 
 
 /*Buttons*/
 button{

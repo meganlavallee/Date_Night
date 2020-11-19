@@ -1,136 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- scripts for jquery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <!-- link for styling -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      <!-- scripts for jquery -->
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+     <!-- link for styling -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css" />
-  <title>Date Night</title>
-</head>
+      <link rel="stylesheet" href="style.css" />
+     <title>Date Night</title>
+    </head>
 
-<body>
-  <header>
-    <h1 class="header">Date Night</h1>
-  </header>
-  <div id="all-buttons block">
-    <input id="user-input" type="text" />
-    <button id="select-dinner">Specific Food</button>
-    <button id="randomFood-btn">Random Food</button>
-    <!-- all drink butons -->
-    <input id="dronk-input" type="text" />
-    <button id="dronk-btn">Drink</button>
-    <button id="random-Dronk-btn">Random Drink</button>
-  </div>
-  <!-- MEAL -->
-  <section class="section">
-    
-    <h2 id="meal-title" class="card-title"></h2>
-    <div id="meal-display" class="card block">
-      <div id="meal-card">
-        <div class="tile is-ancestor">
+    <body>
+      <header>
+       <h1 class="header">Date Night</h1>
+      </header>
+      <div id="all-buttons block">
+       <input id="user-input" type="text" />
+        <button id="select-dinner">Specific Food</button>
+       <button id="randomFood-btn">Random Food</button>
+        <!-- all drink butons -->
+       <input id="dronk-input" type="text" />
+        <button id="dronk-btn">Drink</button>
+        <button id="random-Dronk-btn">Random Drink</button>
+      </div>
+    <!-- MEAL -->
+      <section class="section">
+
+      <h2 id="meal-title" class="card-title"></h2>
+      <div id="meal-display" class="card block">
+        <div id="meal-card">
+          <div class="tile is-ancestor">
           <div class="tile is-child box">
-            <p class="title has-text-centered">Cooking Instructions</p>
-            <p id="meal-prep">
+             <p class="title has-text-centered">Cooking Instructions</p>
+             <p id="meal-prep">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ad
               inventore blanditiis repellendus hic amet debitis voluptatem facilis
               adipisci maiores repudiandae, in voluptates quod, minima, eum corporis
               vel! Veniam, suscipit?
-            </p>
-            <a href="#" id="meal-link"></a>
-          </div>
-          <div class="tile is-4 is-vertical is-parent">
-            <div class="tile is-child box">
-              <p class="title has-text-centered">NOM-NOM</p>
-              <img class=".is-horizontal-center" id="meal-image"
+              </p>
+             <a href="#" id="meal-link"></a>
+           </div>
+           <div class="tile is-4 is-vertical is-parent">
+             <div class="tile is-child box">
+               <p class="title has-text-centered">NOM-NOM</p>
+                <img class=".is-horizontal-center" id="meal-image"
                 src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
                 alt="no current image" />
-            </div>
-            <div class="tile is-child box">
-              <p class="title">Ingredients</p>
-              <p>
-              <div id="food-lists" class="block">
-                <ul id="food-ingredients" class="food-lists "></ul>
-                <ul id="food-measurements" class="food-lists "></ul>
               </div>
-              </p>
-            </div>
-          </div>
-        </div>
+              <div class="tile is-child box">
+                <p class="title">Ingredients</p>
+                <p>
+                <div id="food-lists" class="block">
+                  <ul id="food-ingredients" class="food-lists "></ul>
+                  <ul id="food-measurements" class="food-lists "></ul>
+                </div>
+               </p>
+             </div>
+           </div>
+         </div>
+       </div>
       </div>
-    </div>
 
-  </section>
+    </section>
 
-  <!-- DRONK -->
-  <section class="section">
-    <h2 id="dronk-title" class="card-title"></h2>
-    <div id="dronk-display" class="card block">
-      <div id="dronk-card" class="block has-text-centered">
-        <div class="tile is-ancestor">
-          <div class="tile is-4 is-vertical is-parent">
-            <div class="tile is-child box">
-              <p class="title">Delicioso</p>
-              <p><img class="is-horizontal-center" id="dronk-image"
+    <!-- DRONK -->
+    <section class="section">
+      <h2 id="dronk-title" class="card-title"></h2>
+      <div id="dronk-display" class="card block">
+        <div id="dronk-card" class="block has-text-centered">
+          <div class="tile is-ancestor">
+            <div class="tile is-4 is-vertical is-parent">
+              <div class="tile is-child box">
+                <p class="title">Delicioso</p>
+               <p><img class="is-horizontal-center" id="dronk-image"
                   src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1125&q=80"
                   alt="no current image" /></p>
-            </div>
-            <div class="tile is-child box">
-              <p class="title">Category/Drinking Glass</p>
-              <p id="dronk-alcoholic" class=" has-text-centered"></p>
-              <p id="dronk-category" class=" has-text-centered"></p>
-              <p id="dronk-glass"></p>
-            </div>
-          </div>
-          <div class="tile is-parent">
-            <div class="tile is-child box">
-              <p class="title">Ingredients/Prep</p>
-              <div id="dronk-lists" class="block">
-                <div class="column">
-                  <ul id="dronk-ingredients" class="food-lists"></ul>
-                  <ul id="dronk-measurements" class="food-lists"></ul>
-
-                </div>
               </div>
-              <p id="dronk-prep" class="">
+              <div class="tile is-child box">
+                <p class="title">Category/Drinking Glass</p>
+                <p id="dronk-alcoholic" class=" has-text-centered"></p>
+                <p id="dronk-category" class=" has-text-centered"></p>
+               <p id="dronk-glass"></p>
+              </div>
+            </div>
+            <div class="tile is-parent">
+              <div class="tile is-child box">
+                <p class="title">Ingredients/Prep</p>
+                <div id="dronk-lists" class="block">
+                 <div class="column">
+                   <ul id="dronk-ingredients" class="food-lists"></ul>
+                    <ul id="dronk-measurements" class="food-lists"></ul>
+
+                  </div>
+                </div>
+                <p id="dronk-prep" class="">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ad
                 inventore blanditiis repellendus hic amet debitis voluptatem facilis
                 adipisci maiores repudiandae, in voluptates quod, minima, eum corporis
                 vel! Veniam, suscipit?
-              </p>
+                </p>
 
-            </div>
+              </div>
+           </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-
-
-
-
-
-
-
-
-  <footer>
-    <div class="block content has-text-centered">
-      <p><strong>Date Night</strong> by Brandt, Megan, Rick &#9829; Zach</p>
-    </div>
-  </footer>
-  <script src="script.js"></script>
-
-
-</body>
+    <footer>
+      <div class=" has-text-centered">
+        <p><strong>Date Night</strong> by Brandt, Megan, Rick &#9829; Zach</p>
+      </div>
+    </footer>
+    <script src="script.js"></script> 
+  </body>
 
 </html>
