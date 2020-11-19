@@ -121,6 +121,7 @@ background-color:#FCE181;
 } 
 
 
+<<<<<<< HEAD
 /* FOOTER*/
 .Site {
   display: flex;
@@ -143,6 +144,19 @@ background-color:#FCE181;
     height: auto;
     border-bottom: 20px;
 }*/
+=======
+/* FOOTER */
+
+.Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .Site-content {
+    flex: 1;
+  }
+>>>>>>> 05f6f539caf088d819e87ff7c79458eacc805249
 
 /*Buttons*/
 button{
