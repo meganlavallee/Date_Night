@@ -63,18 +63,19 @@ header{
     padding: 25px;
 } */
 
-#meal-lists{
+#food-lists{
     display: inline-block;
-    padding: 20cm;
 }
 
 #food-ingredients{
     display: inline-block;
-    margin-left: 10px;
+    font-size: 15px;
+    
 }
 
 #food-measurements{
     display: inline-block;
+    font-size: 15px;
 }
 
 
