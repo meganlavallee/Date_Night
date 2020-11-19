@@ -129,6 +129,7 @@ function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
     .text("Click here to watch a demo video");
 
   $("#meal-display").css("display", "block");
+  
 }
 // start of zachs code / drink calls
 // -------------------------------------------------------------------------------------------------------------------------------
@@ -338,3 +339,4 @@ function listDronkMeasurements(dronks) {
     }
   }
 }
+
