@@ -121,30 +121,6 @@ background-color:#FCE181;
 } 
 
 
-<<<<<<< HEAD
-/* FOOTER*/
-.Site {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  position: absolute;
-  text-align: center;
-  align-content: center;
-}
-
-.Site-content {
-  flex: 1;
-  align-content: center;
-}
-
-/*.content{
-    /*position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    border-bottom: 20px;
-}*/
-=======
 /* FOOTER */
 
 .Site {
@@ -156,7 +132,6 @@ background-color:#FCE181;
   .Site-content {
     flex: 1;
   }
->>>>>>> 05f6f539caf088d819e87ff7c79458eacc805249
 
 /*Buttons*/
 button{
