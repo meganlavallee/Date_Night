@@ -1,9 +1,11 @@
 .is-horizontal-center{
     justify-content: center;
 }
+
+
 header{
     text-align: center;
-    background-color:lightpink;
+    background-color:#9FEDD7;
     height: 50px;
     font-size: 35px;
     font-family: "Rock Salt";
@@ -11,9 +13,7 @@ header{
 
 #user-input{
     width: 25%;
-    margin-left: 100px;
-    
-    
+    margin-left: 100px;  
 }
 
 #dronk-input{
@@ -24,7 +24,7 @@ header{
 }
 
 .card{
-    background-color: lightgrey;
+    background-color: #026670;
     height: auto;
     width: 90%;
     margin: auto;
@@ -45,7 +45,7 @@ header{
 #meal-title{
     text-align: center;
     font-size: 25px;
-    background-color:lightsalmon;
+    background-color:#FEF9C7;
 }
 
 #meal-prep{
@@ -93,7 +93,7 @@ header{
 #dronk-title{
 text-align: center;
 font-size: 25px;
-background-color:lightsalmon;
+background-color:#FCE181;
 }
 
  /* #dronk-lists{
