@@ -94,12 +94,11 @@ font-size: 25px;
 background-color:lightsalmon;
 }
 
-/* #dronk-lists{
+ /* #dronk-lists{
     display: inline-block;
     padding: 0%;  
-}
-
-/* #dronk-ingredients{
+} */
+#dronk-ingredients{
     display: inline-block  
     
 }
@@ -107,7 +106,7 @@ background-color:lightsalmon;
 #dronk-measurements{
     display: inline-block;
     
-} */
+} 
 
 
 /* FOOTER */
