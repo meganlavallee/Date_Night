@@ -1,6 +1,3 @@
-.is-horizontal-center{
-    justify-content: center;
-}
 header{
     text-align: center;
     background-color:lightpink;
@@ -11,16 +8,14 @@ header{
 
 #user-input{
     width: 25%;
-    margin-left: 100px;
-    
-    
+    margin-left: 25px;
+    align-content: center;
 }
 
 #dronk-input{
     width: 25%;
     margin-top: 25px; 
-    
-    
+    align-content: center;
 }
 
 .card{
@@ -30,7 +25,6 @@ header{
     margin: auto;
     margin-top: 25px;
     margin-bottom: 25px;
-    word-wrap: break-word;
 }
 
 #meal-display{
@@ -39,7 +33,7 @@ header{
 
 #dronk-display{
     display: none;
-} 
+}
 
 /* MEAL */
 #meal-title{
@@ -57,12 +51,12 @@ header{
     font-size: 20px;
 }
 
-/* #meal-image{
+#meal-image{
     float: right;
     height: 250px;
     width: 250px;
     padding: 25px;
-} */
+}
 
 #meal-lists{
     display: inline-block;
@@ -71,24 +65,20 @@ header{
 
 #food-ingredients{
     display: inline-block;
-    margin-left: 10px;
 }
 
 #food-measurements{
     display: inline-block;
-    margin-right: 50px;
 }
 
 
 /* DRONK */
-/* #dronk-image{
+#dronk-image{
     float: left;
-    height: auto;
-    width: auto;
+    height: 250px;
+    width: 250px;
     padding: 25px;
-    
-    
-} */
+}
 
 #dronk-title{
 text-align: center;
@@ -96,21 +86,18 @@ font-size: 25px;
 background-color:lightsalmon;
 }
 
- /* #dronk-lists{
+#dronk-lists{
     display: inline-block;
-    padding: 0%;  
-} */
+    padding: 20ch;   
+}
+
 #dronk-ingredients{
-    display: inline-block;
-    text-align: left; 
-    
+    display: inline-block  
 }
 
 #dronk-measurements{
     display: inline-block;
-    text-align: right;
-    
-} 
+}
 
 
 /* FOOTER */
