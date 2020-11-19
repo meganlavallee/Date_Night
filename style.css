@@ -3,8 +3,14 @@
 }
 
 /*Responsiveness*/
-.is-mobile.until-fullhd
+/* Disable the widescreen breakpoint*/
+$widescreen-enabled: true;
 
+/* Disable the fullhd breakpoint*/
+$fullhd-enabled: true;
+
+.until-widescreen-is-mobile
+.until-fullhd-is-mobile
 
 html {
   background: url("https://images.unsplash.com/photo-1600891965483-0a429ebf9076?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1274&q=80");
