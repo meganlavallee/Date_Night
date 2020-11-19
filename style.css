@@ -114,23 +114,12 @@ header {
 }
 
 /* FOOTER */
-<<<<<<< HEAD
 
 footer {
     text-align: center!important;
     background-color: #9fedd7;
 }
 
-
-=======
-/* .content{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    border-bottom: 20px;
-}  */
->>>>>>> 8199749a20e67019df2b30ae1d11db01e3268f6d
 .Site {
   display: flex;
   min-height: 100vh;
