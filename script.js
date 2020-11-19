@@ -80,6 +80,7 @@ function getDinner() {
     listMeasurements(dinner);
   });
 }
+
 // this function will compile our ingredients and display them to a screen
 function listIngredient(dinner) {
   $("#food-ingredients").empty();
@@ -102,7 +103,7 @@ function listIngredient(dinner) {
 function listMeasurements(dinner) {
   $("#food-measurements").empty();
   // this is where our function will create the measurements
-  var ingredientNum = 1;
+  var measurementNum = 1;
   // this for loop is used for looking through dinner and checking for ingridents
   for (const key in dinner) {
     if (dinner[key]) {
@@ -111,10 +112,10 @@ function listMeasurements(dinner) {
 
       if (dinner[key].trim() == "") return;
 
-      var measurementName = "strMeasure" + `${ingredientNum}`;
+      var measurementName = "strMeasure" + `${measurementNum}`;
       if (`${keyNum}` === `${measurementName}`) {
         $("#food-measurements").append($("<li>").text(value));
-        ingredientNum++;
+        measurementNum++;
       }
     }
   }
@@ -126,8 +127,9 @@ function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
   $("#meal-prep").text(mealPrep);
   $("#meal-link")
     .attr("href", mealLink)
+    .attr("rel", "opener")
+    .attr("target", "_blank")
     .text("Click here to watch a demo video");
-
   $("#meal-display").css("display", "block");
 }
 // start of zachs code / drink calls
@@ -294,7 +296,7 @@ function makeDronk(
   $("#dronk-title").text(dronkTitle);
   $("#dronk-alcoholic").text(dronkAlcoholic);
   $("#dronk-category").text(dronkCategory);
-  $("#dronk-image").attr("src", dronkImage + "/preview");
+  $("#dronk-image").attr("src", dronkImage);
   $("#dronk-glass").text(dronkGlass);
   $("#dronk-prep").text(dronkPrep);
 }
