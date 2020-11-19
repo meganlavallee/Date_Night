@@ -1,0 +1,131 @@
+<<<<<<< HEAD
+=======
+.is-horizontal-center{
+    justify-content: center;
+}
+header{
+    text-align: center;
+    background-color:lightpink;
+    height: 50px;
+    font-size: 35px;
+    font-family: "Rock Salt";
+}
+
+#user-input{
+    width: 25%;
+    margin-left: 100px;
+    
+    
+}
+
+#dronk-input{
+    width: 25%;
+    margin-top: 25px; 
+    
+    
+}
+
+.card{
+    background-color: lightgrey;
+    height: auto;
+    width: 90%;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#meal-display{
+    display: none;
+}
+
+#dronk-display{
+    display: none;
+} 
+
+/* MEAL */
+#meal-title{
+    text-align: center;
+    font-size: 25px;
+    background-color:lightsalmon;
+}
+
+#meal-prep{
+    font-size: 20px;
+    padding: 25px;
+}
+
+#dronk-prep{
+    font-size: 20px;
+}
+
+#meal-image{
+    float: right;
+    height: 250px;
+    width: 250px;
+    padding: 25px;
+}
+
+#meal-lists{
+    display: inline-block;
+    padding: 20cm;
+}
+
+#food-ingredients{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#food-measurements{
+    display: inline-block;
+}
+
+
+/* DRONK */
+/* #dronk-image{
+    float: left;
+    height: auto;
+    width: auto;
+    padding: 25px;
+    
+    
+} */
+
+#dronk-title{
+text-align: center;
+font-size: 25px;
+background-color:lightsalmon;
+}
+
+ /* #dronk-lists{
+    display: inline-block;
+    padding: 0%;  
+} */
+#dronk-ingredients{
+    display: inline-block  
+    
+}
+
+#dronk-measurements{
+    display: inline-block;
+    
+} 
+
+
+/* FOOTER */
+.content{
+    /*position: absolute;*/
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    border-bottom: 20px;
+}
+
+/*Buttons*/
+button{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px inset;  
+    color: rgb(98, 53, 109);
+    box-align: center;
+}
+>>>>>>> cabe16b478a1a82fb145921793436bf8fb186ab0
