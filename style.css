@@ -2,11 +2,18 @@
     justify-content: center;
 }
 
+body{
+    background-image: url('https://images.unsplash.com/photo-1600891965483-0a429ebf9076?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1274&q=80');
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-size: cover;
+    height: 100%;
+  }
 
 header{
     text-align: center;
     background-color:#9FEDD7;
-    height: 50px;
+    height: 60px;
     font-size: 35px;
     font-family: "Rock Salt";
 }
@@ -45,7 +52,7 @@ header{
 #meal-title{
     text-align: center;
     font-size: 25px;
-    background-color:#FEF9C7;
+    background-color:#FCE181;
 }
 
 #meal-prep{
@@ -115,7 +122,7 @@ background-color:#FCE181;
 
 /* FOOTER */
 .content{
-    /*position: absolute;*/
+    position: absolute;
     bottom: 0;
     width: 100%;
     height: auto;
