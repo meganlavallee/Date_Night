@@ -1,68 +1,65 @@
-.is-horizontal-center{
-    justify-content: center;
+.is-horizontal-center {
+  justify-content: center;
 }
 
-  html { 
-    background: url('https://images.unsplash.com/photo-1600891965483-0a429ebf9076?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1274&q=80'); 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
-
-header{
-    text-align: center;
-    background-color:#9FEDD7;
-    height: 60px;
-    font-size: 35px;
-    font-family: "Rock Salt";
+html {
+  background: url("https://images.unsplash.com/photo-1600891965483-0a429ebf9076?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1274&q=80");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-#user-input{
-    width: 25%;
-    margin-left: 100px;  
+header {
+  text-align: center;
+  background-color: #9fedd7;
+  height: 60px;
+  font-size: 35px;
+  font-family: "Rock Salt";
 }
 
-#dronk-input{
-    width: 25%;
-    margin-top: 25px; 
-    
-    
+#user-input {
+  width: 25%;
+  margin-left: 100px;
 }
 
-.card{
-    background-color: #026670;
-    height: auto;
-    width: 90%;
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    word-wrap: break-word;
+#dronk-input {
+  width: 25%;
+  margin-top: 25px;
 }
 
-#meal-display{
-    display: none;
+.card {
+  background-color: #026670;
+  height: auto;
+  width: 90%;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  word-wrap: break-word;
 }
 
-#dronk-display{
-    display: none;
-} 
+#meal-display {
+  display: none;
+}
+
+#dronk-display {
+  display: none;
+}
 
 /* MEAL */
-#meal-title{
-    text-align: center;
-    font-size: 25px;
-    background-color:#FCE181;
+#meal-title {
+  text-align: center;
+  font-size: 25px;
+  background-color: #fce181;
 }
 
-#meal-prep{
-    font-size: 20px;
-    padding: 25px;
+#meal-prep {
+  font-size: 20px;
+  padding: 25px;
 }
 
-#dronk-prep{
-    font-size: 20px;
+#dronk-prep {
+  font-size: 20px;
 }
 
 /* #meal-image{
@@ -72,21 +69,19 @@ header{
     padding: 25px;
 } */
 
-#food-lists{
-    display: inline-block;
+#food-lists {
+  display: inline-block;
 }
 
-#food-ingredients{
-    display: inline-block;
-    font-size: 15px;
-    
+#food-ingredients {
+  display: inline-block;
+  font-size: 15px;
 }
 
-#food-measurements{
-    display: inline-block;
-    font-size: 15px;
+#food-measurements {
+  display: inline-block;
+  font-size: 15px;
 }
-
 
 /* DRONK */
 /* #dronk-image{
@@ -98,30 +93,36 @@ header{
     
 } */
 
-#dronk-title{
-text-align: center;
-font-size: 25px;
-background-color:#FCE181;
+#dronk-title {
+  text-align: center;
+  font-size: 25px;
+  background-color: #fce181;
 }
 
- /* #dronk-lists{
+/* #dronk-lists{
     display: inline-block;
     padding: 0%;  
 } */
-#dronk-ingredients{
-    display: inline-block;
-    text-align: left; 
-    
+#dronk-ingredients {
+  display: inline-block;
+  text-align: left;
 }
 
-#dronk-measurements{
-    display: inline-block;
-    text-align: right;
-    
-} 
-
+#dronk-measurements {
+  display: inline-block;
+  text-align: right;
+}
 
 /* FOOTER */
+<<<<<<< HEAD
+
+footer {
+    text-align: center!important;
+    background-color: #9fedd7;
+}
+
+
+=======
 /* .content{
     position: absolute;
     bottom: 0;
@@ -129,21 +130,22 @@ background-color:#FCE181;
     height: auto;
     border-bottom: 20px;
 }  */
+>>>>>>> 8199749a20e67019df2b30ae1d11db01e3268f6d
 .Site {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  
-  .Site-content {
-    flex: 1;
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
 
 /*Buttons*/
-button{
-    border: 1px solid;
-    padding: 10px;
-    box-shadow: 5px 10px inset;  
-    color: rgb(98, 53, 109);
-    box-align: center;
+button {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px inset;
+  color: rgb(14, 71, 43);
+  box-align: center;
 }
