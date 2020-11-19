@@ -2,13 +2,14 @@
     justify-content: center;
 }
 
-body{
-    background-image: url('https://images.unsplash.com/photo-1600891965483-0a429ebf9076?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1274&q=80');
-    background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
+  html { 
+    background: url('https://images.unsplash.com/photo-1600891965483-0a429ebf9076?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1274&q=80'); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    height: 100%;
   }
+
 
 header{
     text-align: center;
@@ -71,19 +72,19 @@ header{
     padding: 25px;
 } */
 
-#meal-lists{
+#food-lists{
     display: inline-block;
-    padding: 20cm;
 }
 
 #food-ingredients{
     display: inline-block;
-    margin-left: 10px;
+    font-size: 15px;
+    
 }
 
 #food-measurements{
     display: inline-block;
-    margin-right: 50px;
+    font-size: 15px;
 }
 
 
@@ -127,7 +128,7 @@ background-color:#FCE181;
     width: 100%;
     height: auto;
     border-bottom: 20px;
-}
+} 
 
 /*Buttons*/
 button{
