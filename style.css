@@ -122,7 +122,13 @@ background-color:#FCE181;
 
 
 /* FOOTER */
-
+/* .content{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    border-bottom: 20px;
+}  */
 .Site {
     display: flex;
     min-height: 100vh;
