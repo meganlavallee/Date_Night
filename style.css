@@ -3,10 +3,7 @@
 }
 
 /*Responsiveness*/
-button.is-mobile.until-fullhd
-
-
-html {
+button.is-mobile.until-fullhd html {
   background: url("https://images.unsplash.com/photo-1600891965483-0a429ebf9076?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1274&q=80");
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -120,10 +117,9 @@ header {
 /* FOOTER */
 
 footer {
-    text-align: center!important;
-    background-color: #9fedd7;
+  text-align: center !important;
+  background-color: #9fedd7;
 }
-
 
 .Site {
   display: flex;
