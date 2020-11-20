@@ -40,11 +40,11 @@ body {
   border-radius: 5px;
 }
 
-.section-meal {
+#meal-display {
   display: none;
 }
 
-.section-dronk {
+#dronk-display {
   display: none;
 }
 
