@@ -60,42 +60,11 @@ body {
 }
 
 
-#food-lists {
-  display: inline-block;
-}
-
-#food-ingredients {
-  display: inline-block;
-  margin-left: 10px;
-
-}
-
-#food-measurements {
-  display: inline-block;
-  
-}
-.food-lists{
-  align-content: center;
-}
-
 /* DRONK */
 
 #dronk-prep {
   font-size: 20px;
 }
-
-
-#dronk-ingredients {
-  display: inline-block;
-  text-align: left;
-}
-
-#dronk-measurements {
-  display: inline-block;
-  text-align: right;
-}
-
-
 footer {
   text-align: center !important;
   background-color: #950740;
