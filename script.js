@@ -317,7 +317,7 @@ function combineDronkLists(dronks) {
   var totalMeasurements = [];
   var ticker = 0;
   var measurementNum = 1;
-  // this for loop is used for looking through dinner and checking for ingridents
+  // this for loop is used for looking through drinks and checking for ingridents
   for (const key in dronks) {
     if (dronks[key]) {
       var keyNum = key;
@@ -337,7 +337,7 @@ function combineDronkLists(dronks) {
   // this is where our function will create the ingredients array
   var totalIngredients = [];
   var ingredientNum = 1;
-  // this for loop is used for looking through dinner and checking for ingridents
+  // this for loop is used for looking through drinks and checking for ingridents
   for (const key in dronks) {
     if (dronks[key]) {
       var keyNum = key;
