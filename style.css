@@ -59,12 +59,6 @@ body {
   font-family: "Lobster";
 }
 
-/* #meal-image{
-    float: right;
-    height: 250px;
-    width: 250px;
-    padding: 25px;
-} */
 
 #food-lists {
   display: inline-block;
@@ -85,10 +79,7 @@ body {
   font-size: 20px;
 }
 
-/* #dronk-lists{
-    display: inline-block;
-    padding: 0%;  
-} */
+
 #dronk-ingredients {
   display: inline-block;
   text-align: left;
@@ -99,11 +90,10 @@ body {
   text-align: right;
 }
 
-/* FOOTER */
 
 footer {
   text-align: center !important;
-  background-color: #9fedd7;
+  background-color: #950740;
 }
 
 .Site {
