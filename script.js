@@ -42,11 +42,10 @@ function selectIngredients(dinnerId) {
     var dinner = food.meals[0];
     var foodPrep = dinner.strInstructions;
 
+    // this is where our function will make another ajax call to get ingredients from id
     selectDescription(foodPrep);
-    // this is where our function will create the ingridents list for our recipe
-    listIngredient(dinner);
-    // this is where our function will create the ingridents list for our recipe
-    listMeasurements(dinner);
+    // this is where our ingredients/measurements come together to make one list
+    combineLists(dinner);
     $("#user-input").val("");
     $("#meal-display").css("display", "block");
   });
@@ -74,35 +73,16 @@ function getDinner() {
 
     // this is where all of our function calls will be at the end of the ajax call
     makeDinner(foodTitle, foodImage, foodPrep, foodLink);
-    // this is where our function will create the ingridents list for our recipe
-    listIngredient(dinner);
-    // this is where our function will create the measurements list for our recipe
-    listMeasurements(dinner);
+    // this is where our ingredients and measurements come together to make one list
+    combineLists(dinner);
   });
 }
-
-// this function will compile our ingredients and display them to a screen
-function listIngredient(dinner) {
-  $("#food-ingredients").empty();
-  var ingredientNum = 1;
-  // this for loop is used for looking through dinner and checking for ingridents
-  for (const key in dinner) {
-    if (dinner[key]) {
-      var keyNum = key;
-      var value = dinner[key];
-
-      var ingredientName = "strIngredient" + `${ingredientNum}`;
-      if (`${keyNum}` === `${ingredientName}`) {
-        $("#food-ingredients").append($("<li>").text(value));
-        ingredientNum++;
-      }
-    }
-  }
-}
-// this function will compile our measurements and display them to a screen
-function listMeasurements(dinner) {
+// tester code --------------------------------------------------------------------------------------------------------------------
+function combineLists(dinner) {
   $("#food-measurements").empty();
-  // this is where our function will create the measurements
+  // this is where our function will create the measurements array
+  var totalMeasurements = [];
+  var ticker = 0;
   var measurementNum = 1;
   // this for loop is used for looking through dinner and checking for ingridents
   for (const key in dinner) {
@@ -114,12 +94,38 @@ function listMeasurements(dinner) {
 
       var measurementName = "strMeasure" + `${measurementNum}`;
       if (`${keyNum}` === `${measurementName}`) {
-        $("#food-measurements").append($("<li>").text(value));
+        totalMeasurements.push(`${value}`);
+
+        ticker++;
         measurementNum++;
       }
     }
   }
+  // this is where our function will create the ingredients array
+  var totalIngredients = [];
+  var ingredientNum = 1;
+  // this for loop is used for looking through dinner and checking for ingridents
+  for (const key in dinner) {
+    if (dinner[key]) {
+      var keyNum = key;
+      var value = dinner[key];
+
+      var ingredientName = "strIngredient" + `${ingredientNum}`;
+      if (`${keyNum}` === `${ingredientName}`) {
+        totalIngredients.push(`${value}`);
+
+        ticker++;
+        ingredientNum++;
+      }
+    }
+  }
+  // this is where our code will combine the lists together to make one list and display it on the screen
+  for (var i = 0; i < totalMeasurements.length; i++) {
+    var listItem = totalMeasurements[i] + " " + totalIngredients[i];
+    $("#food-measurements").append($("<li>").text(listItem));
+  }
 }
+// end of tester code -------------------------------------------------------------------------------------------------------------
 // this is the actual function that compiles our ajax call data and displays it to the screen
 function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
   $("#meal-title").text(mealTitle);
