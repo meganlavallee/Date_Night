@@ -2,10 +2,6 @@
   justify-content: center;
 }
 
-/*Responsiveness*/
-
-
-
 html {
   background: url("https://images.unsplash.com/photo-1600891965483-0a429ebf9076?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1274&q=80");
   -webkit-background-size: cover;
@@ -62,40 +58,27 @@ header {
   padding: 25px;
 }
 
-#dronk-prep {
-  font-size: 20px;
-}
-
-/* #meal-image{
-    float: right;
-    height: 250px;
-    width: 250px;
-    padding: 25px;
-} */
-
 #food-lists {
   display: inline-block;
 }
 
 #food-ingredients {
   display: inline-block;
-  font-size: 15px;
+  font-size: 14px;
+  
 }
 
 #food-measurements {
   display: inline-block;
-  font-size: 15px;
+  font-size: 14px;
+  
 }
 
 /* DRONK */
-/* #dronk-image{
-    float: left;
-    height: auto;
-    width: auto;
-    padding: 25px;
-    
-    
-} */
+
+#dronk-prep {
+  font-size: 20px;
+}
 
 #dronk-title {
   text-align: center;
@@ -103,10 +86,6 @@ header {
   background-color: #fce181;
 }
 
-/* #dronk-lists{
-    display: inline-block;
-    padding: 0%;  
-} */
 #dronk-ingredients {
   display: inline-block;
   text-align: left;
@@ -123,7 +102,6 @@ footer {
     text-align: center!important;
     background-color: #9fedd7;
 }
-
 
 .Site {
   display: flex;
@@ -143,3 +121,6 @@ button {
   color: rgb(14, 71, 43);
   box-align: center;
 }
+
+
+
