@@ -2,27 +2,7 @@
   justify-content: center;
 }
 
-/*Responsiveness*/
-/* Disable the widescreen breakpoint*/
-<<<<<<< HEAD
-/* $widescreen-enabled: true; */
 
-/* Disable the fullhd breakpoint*/
-/* $fullhd-enabled: true; */
-
-/* .until-widescreen-is-mobile
-.until-fullhd-is-mobile */
-
-
-=======
-$widescreen-enabled: true;
->>>>>>> c1c7efb0a1656835821be60c177deb860f7fa423
-
-/* Disable the fullhd breakpoint*/
-$fullhd-enabled: true;
-
-.until-widescreen-is-mobile
-.until-fullhd-is-mobile
 
 html {
   background: url("https://images.unsplash.com/photo-1600891965483-0a429ebf9076?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1274&q=80");
@@ -142,12 +122,5 @@ button {
   box-align: center;
 }
 
-/* @media(max-width: 767px){
- .is-ancestor{
-  flex-direction: column;
-}
-.is-child :nth-child(1) { order: 3;}
-.is-child :nth-child(2) { order: 1;}
-.is-child :nth-child(3) { order: 2;}
-} */
+
 
