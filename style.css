@@ -80,6 +80,9 @@ body {
   display: inline-block;
   
 }
+.food-lists{
+  align-content: center;
+}
 
 /* DRONK */
 
