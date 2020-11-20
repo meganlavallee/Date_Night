@@ -73,10 +73,12 @@ body {
 #food-ingredients {
   display: inline-block;
   margin-left: 10px;
+
 }
 
 #food-measurements {
   display: inline-block;
+  
 }
 
 /* DRONK */
