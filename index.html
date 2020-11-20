@@ -10,52 +10,52 @@
   <!-- link for styling -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet" />
-      <script src="https://kit.fontawesome.com/781c5beae4.js" crossorigin="anonymous"></script>
-      <!-- our script -->
-      <link rel="stylesheet" href="style.css" />
-     <title>Date Night</title>
-    </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/781c5beae4.js" crossorigin="anonymous"></script>
+  <!-- our script -->
+  <link rel="stylesheet" href="style.css" />
+  <title>Date Night</title>
+</head>
 
-    <body class="Site">
-      <header class="header">
-       <h1 class="content"><i class="fas fa-glass-cheers"></i>Date Night<i class="fas fa-fire"></i></h1>
-      </header>
-      <main class="Site-content">
-        <div class="container">
-          <div class="column">
-            <div id="meal-buttons">
-              <!-- all meal buttons -->
-              <input id="user-input" type="text" class="button" placeholder="Pick Your Protein"/>
-              <button id="select-dinner" class="button btn-color">Food</button>
-              <button id="randomFood-btn" class="button btn-color">Random Food</button>
-            </div>
-          </div>
-          <div class="column">
-            <div id="dronk-buttons">
-              <!-- all drink butons -->
-              <input id="dronk-input" type="text" class="button" placeholder="Name/Type of Alcohol"/>
-              <button id="dronk-btn" class="button btn-color">Drink</button>
-              <button id="random-Dronk-btn" class="button btn-color">Random Drink</button>
-            </div>
-          </div>
+<body class="Site">
+  <header class="header">
+    <h1 class="content"><i class="fas fa-glass-cheers"></i>Date Night<i class="fas fa-fire"></i></h1>
+  </header>
+  <main class="Site-content">
+    <div class="container">
+      <div class="column">
+        <div id="meal-buttons">
+          <!-- all meal buttons -->
+          <input id="user-input" type="text" class="button" placeholder="Pick Your Protein" />
+          <button id="select-dinner" class="button btn-color">Food</button>
+          <button id="randomFood-btn" class="button btn-color">Random Food</button>
         </div>
-    <!-- MEAL -->
-      <section class="section">
-        <div id="meal-display" class="card block">
-          <div id="meal-card">
-    <div class="column card-name">
-      <h2 id="meal-title" class="card-title"></h2>
+      </div>
+      <div class="column">
+        <div id="dronk-buttons">
+          <!-- all drink butons -->
+          <input id="dronk-input" type="text" class="button" placeholder="Name/Type of Alcohol" />
+          <button id="dronk-btn" class="button btn-color">Drink</button>
+          <button id="random-Dronk-btn" class="button btn-color">Random Drink</button>
+        </div>
+      </div>
     </div>
+    <!-- MEAL -->
+    <section class="section">
+      <div id="meal-display" class="card block">
+        <div id="meal-card">
+          <div class="column card-name">
+            <h2 id="meal-title" class="card-title"></h2>
+          </div>
           <div class="tile is-ancestor">
             <div class="tile is-4 is-vertical is-parent">
               <div class="tile is-child box">
-                <p class="title has-text-centered">NOM-NOM</p>
-                <p><img class=".is-horizontal-center" id="meal-image"
-                    src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-                    alt="no current image" /></p>
+                <h2 class="title has-text-centered">NOM-NOM</h2>
+                <img class=".is-horizontal-center img-border" id="meal-image"
+                  src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                  alt="no current image" rel="opener" target="_blank" />
               </div>
               <div class="tile is-child box">
                 <p>
@@ -69,21 +69,15 @@
             </div>
             <div class="tile is-parent">
               <div class="tile is-child box">
-                <p class="title has-text-centered">Cooking Instructions</p>
-                
-                  <div class="column">
-                    <p id="meal-prep">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ad
-                      inventore blanditiis repellendus hic amet debitis voluptatem facilis
-                      adipisci maiores repudiandae, in voluptates quod, minima, eum corporis
-                      vel! Veniam, suscipit?
-                    </p>
-                    <a href="#" id="meal-link"></a>
-                  </div>
-                
+                <h2 class="title has-text-centered">Cooking Instructions</h2>
+                <p id="meal-prep"></p>
+                <a href="#" id="meal-link"></a>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
     </section>
 
     <!-- DRONK -->
@@ -98,9 +92,9 @@
             <div class="tile is-4 is-vertical is-parent">
               <div class="tile is-child box">
                 <h2 class="title">Delicioso</h2>
-                <p><img class="is-horizontal-center" id="dronk-image"
-                    src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1125&q=80"
-                    alt="no current image" /></p>
+                <img class="is-horizontal-center img-border" id="dronk-image"
+                  src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1125&q=80"
+                  alt="no current image" />
               </div>
               <div class="tile is-child box">
                 <h2 class="title">Category/Drinking Glass</h2>
@@ -113,16 +107,41 @@
               <div class="tile is-child box">
                 <h2 class="title">Ingredients/Prep</h2>
                 <div id="dronk-lists" class="block">
-                  <div class="column">
-                    <ul id="dronk-measurements" class="food-lists has-text-centered"></ul>
-                    <ul id="dronk-ingredients" class="food-lists has-text-centered"></ul>
-                  </div>
+                  <ul id="dronk-measurements" class="food-lists has-text-centered"></ul>
+                  <ul id="dronk-ingredients" class="food-lists has-text-centered"></ul>
                 </div>
                 <p id="dronk-prep" class="">
                 
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Onload explanation card -->
+    <section class="section">
+      <div id="onload-display" class="card block">
+        <div id="onload-card">
+          <div class="column card-name">
+            <h2 id="onload-title" class="card-title"> Ready For A Night In?</h2>
+            <p>
+              Have a special someone you want to impress? Maybe a special occasion is coming up and you like to have
+              some *flair* every so often. Maybe you want to treat yourself as you relax on the couch with your favorite
+              show or movie. You can eat and drink like the <i class="fas fa-chess-king"></i> or <i class="fas fa-chess-queen"></i> you truly are with this one site. Hundreds of recipes at the click of a
+              button which lets you feel like the royalty you are. Search by ingredient if you want a meal or get crazy
+              and randomize the dish, these recipes will have you falling in love <i class="fas fa-grin-hearts"></i>.
+              You may be concerned, "Creators! <i class="fas fa-flushed"></i> I am no chef!" Not to worry, each meal
+              recipe comes complete with a video tutorial link to help you wow your tastebuds and ensure a <em>perfect
+                Date Night</em>.
+            </p>
+            <br>
+            <p>
+              Pair your meal with a drink from around the world <i class="fas fa-cocktail"></i> Search by cocktail name,
+              ingredient or go for the random to find the perfect match <i class="fas fa-kiss-wink-heart"></i> for your
+              night in. New cocktails, floats, alcholic or non-alcoholic, being added all the time so you never run out
+              of new experiences for your <em>Date Night</em>.
+            </p>
           </div>
         </div>
       </div>
