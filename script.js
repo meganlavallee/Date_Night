@@ -48,6 +48,8 @@ function selectIngredients(dinnerId) {
     // this is where our function will create the ingridents list for our recipe
     listMeasurements(dinner);
     $("#user-input").val("");
+    // make landing page display
+    $("#onload-display").css("display", "none");
     $("#meal-display").css("display", "block");
   });
 }
@@ -130,6 +132,8 @@ function makeDinner(mealTitle, mealImage, mealPrep, mealLink) {
     .attr("rel", "opener")
     .attr("target", "_blank")
     .text("Click here to watch a demo video");
+  // make landing page display
+  $("#onload-display").css("display", "none");
   $("#meal-display").css("display", "block");
 }
 // start of zachs code / drink calls
@@ -171,6 +175,8 @@ function getDronk() {
     listDronkIngredients(dronks);
     // this is where our function will create the ingredients list for our recipe
     listDronkMeasurements(dronks);
+    // make landing page display
+    $("#onload-display").css("display", "none");
     // shows drink card once item is searched
     $("#dronk-display").css("display", "block");
   });
@@ -247,6 +253,8 @@ function findDronk(dronkID) {
     listDronkIngredients(dronks);
     // this is where our function will create the ingredients list for our recipe
     listDronkMeasurements(dronks);
+    // make landing page display
+    $("#onload-display").css("display", "none");
     $("#dronk-display").css("display", "block");
   });
 }
@@ -281,6 +289,8 @@ function dronkName(userDronk) {
     listDronkIngredients(dronks);
     // this is where our function will create the ingredients list for our recipe
     listDronkMeasurements(dronks);
+    // make landing page display
+    $("#onload-display").css("display", "none");
     $("#dronk-display").css("display", "block");
   });
 }
