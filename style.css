@@ -80,14 +80,10 @@ body {
 }
 
 /* DRONK */
-/* #dronk-image{
-    float: left;
-    height: auto;
-    width: auto;
-    padding: 25px;
-    
-    
-} */
+
+#dronk-prep {
+  font-size: 20px;
+}
 
 /* #dronk-lists{
     display: inline-block;
