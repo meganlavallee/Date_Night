@@ -1,5 +1,5 @@
-/* lobsterfont */
-@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+/* lobster and acme font */
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&display=swap');
 .is-horizontal-center {
   justify-content: center;
 }
@@ -147,4 +147,9 @@ h2 {
 }
 p {
   font-size: 2vw;
+  font-family: "acme";
+}
+li {
+  font-size: 1.5vw;
+  font-family: "acme";
 }
