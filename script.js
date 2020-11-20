@@ -178,9 +178,7 @@ function getDronk() {
     );
 
     // this is where our function will create the ingredients list for our recipe
-    listDronkIngredients(dronks);
-    // this is where our function will create the ingredients list for our recipe
-    listDronkMeasurements(dronks);
+    combineDronkLists(dronks);
     // make landing page display
     $("#onload-display").css("display", "none");
     // shows drink card once item is searched
@@ -256,9 +254,7 @@ function findDronk(dronkID) {
       dronkPrep
     );
     // this is where our function will create the ingredients list for our recipe
-    listDronkIngredients(dronks);
-    // this is where our function will create the ingredients list for our recipe
-    listDronkMeasurements(dronks);
+    combineDronkLists(dronks);
     // make landing page display
     $("#onload-display").css("display", "none");
     $("#dronk-display").css("display", "block");
@@ -292,9 +288,7 @@ function dronkName(userDronk) {
       dronkPrep
     );
     // this is where our function will create the ingredients list for our recipe
-    listDronkIngredients(dronks);
-    // this is where our function will create the ingredients list for our recipe
-    listDronkMeasurements(dronks);
+    combineDronkLists(dronks);
     // make landing page display
     $("#onload-display").css("display", "none");
     $("#dronk-display").css("display", "block");
@@ -316,12 +310,34 @@ function makeDronk(
   $("#dronk-glass").text(dronkGlass);
   $("#dronk-prep").text(dronkPrep);
 }
+// modeled after tester code created by the one and only Rick <3
+function combineDronkLists(dronks) {
+  $("#dronk-measurements").empty();
+  // this is where our function will create the measurements array
+  var totalMeasurements = [];
+  var ticker = 0;
+  var measurementNum = 1;
+  // this for loop is used for looking through dinner and checking for ingridents
+  for (const key in dronks) {
+    if (dronks[key]) {
+      var keyNum = key;
+      var value = dronks[key];
 
-// structured after food ingredients to create list items of ingredients
-function listDronkIngredients(dronks) {
-  $("#dronk-ingredients").empty();
+      if (dronks[key].trim() == "") return;
+
+      var measurementName = "strMeasure" + `${measurementNum}`;
+      if (`${keyNum}` === `${measurementName}`) {
+        totalMeasurements.push(`${value}`);
+
+        ticker++;
+        measurementNum++;
+      }
+    }
+  }
+  // this is where our function will create the ingredients array
+  var totalIngredients = [];
   var ingredientNum = 1;
-  // this for loop is used for looking through drink info and checking for ingredients
+  // this for loop is used for looking through dinner and checking for ingridents
   for (const key in dronks) {
     if (dronks[key]) {
       var keyNum = key;
@@ -329,30 +345,20 @@ function listDronkIngredients(dronks) {
 
       var ingredientName = "strIngredient" + `${ingredientNum}`;
       if (`${keyNum}` === `${ingredientName}`) {
-        $("#dronk-ingredients").append($("<li>").text(value));
+        totalIngredients.push(`${value}`);
+
+        ticker++;
         ingredientNum++;
       }
     }
   }
-}
-
-// structured after food measurements to create list items of measurements
-function listDronkMeasurements(dronks) {
-  $("#dronk-measurements").empty();
-  var ingredientNum = 1;
-  // this for loop is used for looking through drink info and checking for ingredients
-  for (const key in dronks) {
-    if (dronks[key]) {
-      var keyNum = key;
-      var value = dronks[key];
-
-      if (dronks[key].trim() == " ") return;
-
-      var measurementName = "strMeasure" + `${ingredientNum}`;
-      if (`${keyNum}` === `${measurementName}`) {
-        $("#dronk-measurements").append($("<li>").text(value));
-        ingredientNum++;
-      }
+  // this is where our code will combine the lists together to make one list and display it on the screen
+  for (var i = 0; i < totalIngredients.length; i++) {
+    if (!totalMeasurements[i]){
+      var listItem = totalIngredients[i];
+    }else {
+      var listItem = totalMeasurements[i] + " " + totalIngredients[i];
     }
+    $("#dronk-measurements").append($("<li>").text(listItem));
   }
 }
