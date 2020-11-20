@@ -1,8 +1,8 @@
 Introduction:
-Date Night is a great resource to help out with one of the most stressful times of the day, Dinner Time! Date Night takes care of discussing what you want to eat or trying to just figure out what to eat by displaying a recipe for your meal as well as a drink to pair with your dinner.
+Date Night is a great resource to help out with one of the most stressful times of the day, Dinner Time! Date Night takes care of discussing what you want to eat or trying to just figure out what to eat by displaying a recipe for your meal as well as a drink to pair with your dinner.  Take all of the meal choice decisions out of your busy life and into an app, you just need to make it!
 
 User Story:
-As human beings, sometimes we get hungry. Sometimes the amount of options for meal choices is too abundant. I want something to take the options and select what I should have to eat and drink for me.
+As human beings, we get hungry and the amount of options for meal choices is too abundant. I want something to take the options and select what I should have to eat and drink for me.  
 
 Technological Outline:
 The user inputs what they are looking for and a random receipt will come up on the screen with an image and instructions on how to make it.
@@ -15,13 +15,13 @@ Division of Labor:
 Each group member has a dedicated task to complete. Raw HTML by Rick, CSS by Brandt, 1st API Key (Drink) by Zach, and 2nd API Key (Food).
 
 Conclusion:
-This app will take out the decision making skills out of your hands for a few night, because deciding what to eat should not be a hard choice, let Date Night make your night.
+This app will take out the decision making skills out of your hands for a few night, because deciding what to eat should not be a hard choice, let Date Night make your night.  Deciding what to eat can be an added stressor in your life and with Date Night that decision will be reduced drastically. 
 
 Deployment:
-Our app deployment will be on webpage and an app. Users will be able to put together a meal from just a few button pushses.
+Our app deployment will be on webpage and an app. Users will be able to put together a meal from just a few button pushses; one for meal and one for a drink. Suitable for most phone screens with an enjoyable user interface. 
 
 Conclusion:
-Deciding what to eat should not be a hard choice, let Date Night make your night.
+Deciding what to eat should not be a hard choice, let Date Night make your night so you can have a stress free dinner.
 
 Screen shots
 
